@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmonic Central</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../Harmonic Central.css">
+</head>
+<body>
+
+    <header> 
+
+        <nav>
+            <img class="web_logo" src="../images/web logo/2.png" alt="brand" height="60" width="155">
+            <ul class="ul_menu">
+            <li class="li_nav"><a href="../Home Page.html" class="a_nav_home">Home</a></li>
+            <li class="li_nav"><a href="../contact/Contact Page.html" class="a_nav">Contact</a></li>
+            <li class="li_nav"><a href="#" class="a_nav">Products</a></li>
+            <li class="li_nav"><a href="#" class="a_nav">About</a></li>
+            <li class="li_nav"><a href="#" class="a_nav">Deals</a></li>
+            </ul>
+            <i class="header_filter fa-solid fa-list"></i>
+        </nav>
+
+        <div class="Contact_all">
+                <form action="product.html" method="get">
+                    <div class="search_box">
+                        <input type="text" id="search" class="search" placeholder="Find your perfect tune...">
+                        <label for="search" class="search_label"><i class="fa-solid fa-magnifying-glass"></i></label>
+                    </div>
+                </form> 
+            <div class="contact">
+                <ul>
+                    <li><a class="head_font" href="../account/Account Page.html"><i class="fa-solid fa-user"></i><p>log in</p></a></li>
+                    <li><a class="head_font" href="../wishlist/Wishlist Page.html"><i class="fa-solid fa-heart"></i><p>wishlist</p></a></li>
+                    <li><a class="head_font" href="../cart/Cart Page.html"><i class="fa-solid fa-cart-shopping"></i><p>cart</p></a></li>
+                </ul>       
+            </div>
+        </div>       
+    </header>
+
+    <main>
+        <section class="catalog_section">
+            
+            <form action="guitar catalog.html" method="get">
+                <div class="filter backgroundColor-lightGray color-white">
+
+                    <h2>Find Your Perfect Tone</h2><br>
+
+                    <label for="type"><h3>Type:</h3></label><br>
+                    <select id="type" name="type">
+                        <option value="electric">Electric</option>
+                        <option value="Acoustic">Acoustic</option>
+                        <option value="Classical">Classical</option>
+                        <option value="Bass">Bass</option>
+                        <option value="Acoustic-Electric">Acoustic-Electric</option>
+                        <option value="Travel/Mini">Travel/Mini</option>
+                        <option value="Baritone">Baritone</option>
+                    </select><br>
+
+                    <label for="brand"><h3>brand:</h3></label><br>
+                    <select id="brand" name="brand">
+                        <option value="Fender">Fender</option>
+                        <option value="Gibson">Gibson</option>
+                        <option value="Ibanez">Ibanez</option>
+                        <option value="PRS">PRS</option>
+                        <option value="Yamaha">Yamaha</option>
+                        <option value="ESP">ESP</option>
+                        <option value="Jackson">Jackson</option>
+                        <option value="Martin">Martin</option>
+                        <option value="Taylor">Taylor</option>
+                    </select><br>
+
+                    <label for="submobdel"><h3>submobdel:</h3></label><br>
+                    <select id="submobdel" name="submobdel">
+                        <option value="Fender Stratocaster">Stratocaster</option>
+                        <option value="Fender Telecaster">Telecaster</option>
+                        <option value="Fender Jazzmaster">Jazzmaster</option>
+                        <option value="Fender Jaguar">Jaguar</option>
+                        <option value="Fender Mustang">Mustang</option>
+                        <option value="Gibson Les Paul">Les Paul</option>
+                        <option value="Gibson SG">SG</option>
+                        <option value="Gibson ES-335">ES-335</option>
+                        <option value="Gibson Flying V">Flying V</option>
+                        <option value="Gibson Explorer">Explorer</option>
+                        <option value="Ibanez RG">RG</option>
+                        <option value="Ibanez S Series">S Series</option>
+                        <option value="Ibanez AZ">AZ</option>
+                        <option value="Ibanez Artcore">Artcore</option>
+                        <option value="Ibanez GIO">GIO</option>
+                        <option value="PRS Custom 24">Custom 24</option>
+                        <option value="PRS SE Series">SE Series</option>
+                        <option value="PRS McCarty">McCarty</option>
+                        <option value="PRS Silver Sky">Silver Sky</option>
+                    </select><br> 
+
+                     <h3>price:</h3><br>
+                    <div class="filter_price_box">
+                        <input type="number">
+                        <p>-</p>
+                        <input type="number">
+                    </div><br>
+
+                    <input type="range" class="price_range color-red"><br>
+
+                    <label for="Number of Strings"><h3>Number of Strings:</h3></label><br>
+                    <select id="Number of Strings" name="Number of Strings">
+                        <option value="6 Strings">6 Strings</option>
+                        <option value="7 Strings">7 Strings</option>
+                        <option value="8 Strings">8 Strings</option>
+                        <option value="12 Strings">12 Strings</option>
+                    </select><br>
+
+                    <label for="color"><h3>Color:</h3></label><br>
+                    <input type="color" id="color" name="color"><br>
+
+                    <label for="Scale Length"><h3>Scale Length:</h3></label><br>
+                    <select id="Scale Length" name="Scale Length">
+                        <option value="Short Scale">Short Scale</option>
+                        <option value="Medium Scale">Medium Scale</option>
+                        <option value="Long Scale">Long Scale</option>
+                    </select><br> 
+
+                    <label for="Pickups"><h3>(for electric) Pickups:</h3></label><br> 
+                    <select id="Pickups" name="Pickups">
+                        <option value="Single Coil">Single Coil</option>
+                        <option value="Humbucker">Humbucker</option>
+                        <option value="P90">P90</option>
+                        <option value="Piezo">Piezo</option>
+                    </select><br>
+
+                    <label for="Additional Features"><h3>Additional Features:</h3></label><br> 
+                    <select id="Additional Features" name="Additional Features">
+                        <option value="Left-Handed">Left-Handed</option>
+                        <option value="Bundle Included">Bundle Included</option>
+                        <option value="Case Included">Case Included</option>
+                        <option value="Tremolo System">Tremolo System</option>
+                    </select><br>
+                </div>
+            </form>
+            
+            <div class="sort_catalog">
+                <form action="guitar catalog.html" method="get">
+                    <div class="sort_filter backgroundColor-lightGray color-white">
+
+                        <div class="sort_filter_icon">
+                            <ul>
+                                <li class="quick_filter"><i class="fa-solid fa-list"></i><p>Filter</p></li>
+                                <li><i class="fa-solid fa-arrow-up-from-bracket"></i><p>Share</p></li>
+                            </ul>
+                        </div>
+
+                        <h1>Guitar Catalog</h1>
+                        
+                        <div>
+                            <label for="sort option"><h3>Sort Option:</h3></label><br>
+                            <select id="sort option" name="sort option">
+                                <option value="Relevance">Relevance</option>
+                                <option value="Customer Rating">Customer Rating</option>
+                                <option value="Price - High to Low">Price - High to Low</option>
+                                <option value="Price - Low to High">Price - Low to High</option>
+                                <option value="New Arrivals">New Arrivals</option>
+                                <option value="Top Sellers">Top Sellers</option>
+                                <option value="on sale">On Sale</option>
+                                <option value="recommended">Recommended</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </form>
+
+                <div class="catalog">
+
+                    <div class="catalog_product_box" id="1">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability.png" alt="Squier Sonic Stratocaster Limited-Edition"></div>
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/brand logos/squier.png" alt="squier logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Fender American Ultra Luxe Telecaster - Luxury and Unmatched Playability</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Premium Telecaster – iconic tone, effortless playability, and sleek, luxurious design with modern features.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4>2,649.99 $</h4>
+                                        <p>-10%</p>
+                                    </div> 
+                                    <h2 class="cost">2,119.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="../product page/Product Page.html">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>  
+            
+                    <div class="catalog_product_box" id="2">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/guitars/Electric Guitars/Ibanez/Ibanez GRGR120EX Electric Guitar - White.jpg" alt="Ibanez GRGR120EX Electric Guitar"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/brand logos/ibanez.png" alt="ibanez logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Ibanez GRGR120EX Electric Guitar - White</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Ibanez GRGR120EX in White – sleek design, great performance, and powerful tone for versatile playing.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4>249.99 $</h4>
+                                        <p>-10%</p>
+                                    </div> 
+                                    <h2 class="cost">189.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>
+                                                                        
+                    <div class="catalog_product_box" id="3">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/guitars/Acoustic Guitars/PRS/PRS SE A50E Acoustic-Electric Guitar Fire Red Burst.png" alt="Sterling Guitar"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/brand logos/prs.png" alt="Sterling logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>PRS SE A50E Acoustic-Electric Guitar Fire Red Burst</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">PRS SE A50E in Fire Red Burst – Rich tone, smooth playability, and elegant design for dynamic acoustic performance.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">949.00 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>  
+            
+                    <div class="catalog_product_box" id="4">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/guitars/Electric Guitars/Jackson/L72527000001000-00-600x600.jpg" alt="Gretsch Guitar"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/brand logos/jackson.png" alt="Gretsch logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Jackson JS Series Dinky Arch Top JS34 DKA - Silver Burst</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Jackson Dinky in Silver Burst – sleek design, fast playability, powerful tone, and stunning finish for all players.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4>309.99 $</h4>
+                                        <p>-10%</p>
+                                    </div> 
+                                    <h2 class="cost">249.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div> 
+            
+                    <div class="catalog_product_box" id="5">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/guitars/Electric Guitars/Sterling/Sterling by Music Man John Petrucci JP70 7-String Electric Guitar - Stealth Black.jpg" alt="Sterling Guitar"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/brand logos/sterling.png" alt="Sterling logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Sterling by Music Man John Petrucci JP70 7-String Electric Guitar - Stealth Black</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Sterling JP70 in Stealth Black – 7-string precision, powerful tone, and sleek design for metal and progressive styles.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4>599.99 $</h4>
+                                        <p>-10%</p>
+                                    </div> 
+                                    <h2 class="cost">499.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>
+                                
+                    <div class="catalog_product_box" id="6">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/guitars/Acoustic Guitars/Fender/Fender Newporter Player Limited-Edition Acoustic-Electric Guitar Ocean Teal.png" alt="Sterling Guitar"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/brand logos/squier.png" alt="Sterling logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Fender Newporter Player Limited-Edition Acoustic-Electric Guitar Ocean Teal</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Fender Newporter Player in Ocean Teal – Bold tone, smooth playability, and sleek design for versatile performance.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">449.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>
+
+                    <div class="catalog_product_box" id="7">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability.png" alt="Squier Sonic Stratocaster Limited-Edition"></div>
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/brand logos/squier.png" alt="squier logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Fender American Ultra Luxe Telecaster - Luxury and Unmatched Playability</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Premium Telecaster – iconic tone, effortless playability, and sleek, luxurious design with modern features.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4>2,649.99 $</h4>
+                                        <p>-10%</p>
+                                    </div> 
+                                    <h2 class="cost">2,119.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="../product page/Product Page.html">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>  
+
+                    <div class="catalog_product_box" id="8">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/guitars/Electric Guitars/Ibanez/Ibanez GRGR120EX Electric Guitar - White.jpg" alt="Ibanez GRGR120EX Electric Guitar"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/brand logos/ibanez.png" alt="ibanez logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Ibanez GRGR120EX Electric Guitar - White</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Ibanez GRGR120EX in White – sleek design, great performance, and powerful tone for versatile playing.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4>249.99 $</h4>
+                                        <p>-10%</p>
+                                    </div> 
+                                    <h2 class="cost">189.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>
+                                                                                            
+                    <div class="catalog_product_box" id="9">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/guitars/Acoustic Guitars/PRS/PRS SE A50E Acoustic-Electric Guitar Fire Red Burst.png" alt="Sterling Guitar"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/brand logos/prs.png" alt="Sterling logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>PRS SE A50E Acoustic-Electric Guitar Fire Red Burst</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">PRS SE A50E in Fire Red Burst – Rich tone, smooth playability, and elegant design for dynamic acoustic performance.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">949.00 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>    
+
+                    <div class="catalog_product_box" id="10">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/guitars/Electric Guitars/Jackson/L72527000001000-00-600x600.jpg" alt="Gretsch Guitar"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/brand logos/jackson.png" alt="Gretsch logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Jackson JS Series Dinky Arch Top JS34 DKA - Silver Burst</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Jackson Dinky in Silver Burst – sleek design, fast playability, powerful tone, and stunning finish for all players.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4>309.99 $</h4>
+                                        <p>-10%</p>
+                                    </div> 
+                                    <h2 class="cost">249.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div> 
+
+                    <div class="catalog_product_box" id="11">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/guitars/Electric Guitars/Sterling/Sterling by Music Man John Petrucci JP70 7-String Electric Guitar - Stealth Black.jpg" alt="Sterling Guitar"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/brand logos/sterling.png" alt="Sterling logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Sterling by Music Man John Petrucci JP70 7-String Electric Guitar - Stealth Black</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Sterling JP70 in Stealth Black – 7-string precision, powerful tone, and sleek design for metal and progressive styles.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4>599.99 $</h4>
+                                        <p>-10%</p>
+                                    </div> 
+                                    <h2 class="cost">499.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>
+                                                    
+                    <div class="catalog_product_box" id="12">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/guitars/Acoustic Guitars/Fender/Fender Newporter Player Limited-Edition Acoustic-Electric Guitar Ocean Teal.png" alt="Sterling Guitar"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/brand logos/squier.png" alt="Sterling logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Fender Newporter Player Limited-Edition Acoustic-Electric Guitar Ocean Teal</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Fender Newporter Player in Ocean Teal – Bold tone, smooth playability, and sleek design for versatile performance.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">449.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>
+
+                </div>
+            </div>    
+        </section>
+    </main>
+    
+    <footer>
+
+        <div class="footer_img">
+            <img class="footer_img_phone" src="../images/footer/atar.png">
+            <p class="footer_text">Stay Tuned - Get the Latest Gear, Deals & News!</p>
+        </div>
+        
+        <div class="footer_content">
+            <div class="footer_4">
+                <div class="footer_3">
+                    <div class="company">
+                        <h3 class="headline_footer">Harmonic Sentral</h3>
+                        <ul>
+                            <li><a class="footer_link" href="#"> Our Story</a></li>
+                            <li><a class="footer_link" href="#">About Us</a></li>
+                            <li><a class="footer_link" href="#">Our Services</a></li>
+                            <li><a class="footer_link" href="#">Privacy Policy</a></li>
+                            <li><a class="footer_link" href="#">Affiliate Program</a></li>
+                        </ul>
+                    </div>
+                    <div class="get_help">
+                        <h3 class="headline_footer">Support & FAQs</h3>
+                        <ul>
+                            <li><a class="footer_link" href="#">FAQ</a></li>
+                            <li><a class="footer_link" href="#">Shipping</a></li>
+                            <li><a class="footer_link" href="#">Returns</a></li>
+                            <li><a class="footer_link" href="#">Order Status</a></li>
+                            <li><a class="footer_link" href="#">Payment Option</a></li>
+                        </ul>
+                    </div>   
+                    <div class="online_shop">
+                        <h3 class="headline_footer">Shop Guitars & Gear</h3>
+                        <ul>
+                            <li><a class="footer_link" href="#">Guitars & Basses</a></li>
+                            <li><a class="footer_link" href="#">Accessories & Effects</a></li>
+                            <li><a class="footer_link" href="#">Audio, DJ & Recording</a></li>
+                            <li><a class="footer_link" href="#">Headphones & Speakers</a></li>
+                            <li><a class="footer_link" href="#">Merchandise</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    <div class="summary">
+                        <div class="summary_p">
+                        <p>Harmonic Sentral™ - Play, Discover & Elevate Your Sound</p>
+                        <p> 2025 Nuriel Altstein © - All Rights Reserved</p>
+                        </div>
+                </div>
+            </div>    
+            <div class="follow_us">
+                <h3 class="headline_footer">Join the Harmonic Sentral Community</h3>
+                <div class="icons">
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                    </ul>
+                </div>  
+                    <form class="Subscribe_form" action="product.html" method="get">        
+                <div class="Subscribe">
+                    <h3 class="headline_footer_Subscribe">Stay Tuned - Get Exclusive Deals & Guitar News!</h3>
+                    <p>Subscribe to our newsletter and get the latest on guitars, gear, and special offers - straight to your inbox!</p>
+                    <div class="input_box">
+                        <input type="email" id="Subscribe" placeholder="your-mail@gmail.com" required>
+                        <label class="Subscribe_label" for="Subscribe">Subscribe</label>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </div>
+                    </form>        
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>
