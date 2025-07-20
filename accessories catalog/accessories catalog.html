@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmonic Central</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../Harmonic Central.css">
+</head>
+<body>
+
+    <header> 
+
+        <nav>
+            <img class="web_logo" src="../images/web logo/2.png" alt="brand" height="60" width="155">
+            <ul class="ul_menu">
+            <li class="li_nav"><a href="../index.html" class="a_nav_home">Home</a></li>
+            <li class="li_nav"><a href="../contact/Contact Page.html" class="a_nav">Contact</a></li>
+            <li class="li_nav"><a href="#" class="a_nav">Products</a></li>
+            <li class="li_nav"><a href="#" class="a_nav">About</a></li>
+            <li class="li_nav"><a href="#" class="a_nav">Deals</a></li>
+            </ul>
+            <i class="header_filter fa-solid fa-list"></i>
+        </nav>
+
+        <div class="Contact_all">
+                <form action="product.html" method="get">
+                    <div class="search_box">
+                        <input type="text" id="search" class="search" placeholder="Find your perfect tune...">
+                        <label for="search" class="search_label"><i class="fa-solid fa-magnifying-glass"></i></label>
+                    </div>
+                </form> 
+            <div class="contact">
+                <ul>
+                    <li><a class="head_font" href="../account/Account Page.html"><i class="fa-solid fa-user"></i><p>log in</p></a></li>
+                    <li><a class="head_font" href="../wishlist/Wishlist Page.html"><i class="fa-solid fa-heart"></i><p>wishlist</p></a></li>
+                    <li><a class="head_font" href="../cart/Cart Page.html"><i class="fa-solid fa-cart-shopping"></i><p>cart</p></a></li>
+                </ul>       
+            </div>
+        </div>       
+    </header>
+
+    <main>
+        <section class="catalog_section">
+            
+            <form action="accessories catalog.html" method="get">
+                <div class="filter backgroundColor-lightGray color-white">
+
+                    <h2>Find Your Perfect Tone</h2><br>
+
+                    <label for="category"><h3>Category:</h3></label><br>
+                    <select id="category" name="category">
+                        <option value="effects pedals">Effects Pedals</option>
+                        <option value="multi-effects pedals">Multi-Effects Pedals</option>
+                        <option value="effects pedal accessories">Effects Pedal Accessories</option>
+                        <option value="pedalboards">Pedalboards</option>
+                        <option value="effects pedal packages">Effects Pedal Packages</option>
+                    </select><br>
+
+                    <label for="brand"><h3>brand:</h3></label><br>
+                    <select id="brand" name="brand">
+                        <option value="TC Electronic">TC Electronic</option>
+                        <option value="DigiTech">DigiTech</option>
+                        <option value="BOSS">BOSS</option>
+                        <option value="Ibanez">Ibanez</option>
+                        <option value="Line 6">Line 6</option>
+                        <option value="MXR">MXR</option>
+                        <option value="Dunlop">Dunlop</option>
+                        <option value="Keeley">Keeley</option>
+                        <option value="EarthQuaker Devices">EarthQuaker Devices</option>
+                        <option value="MXR">MXR</option>
+                        <option value="Electro Hamonix">Electro Hamonix</option>
+                    </select><br>
+
+                    <label for="condition"><h3>Condition:</h3></label><br>
+                    <select id="condition" name="condition">
+                        <option value="used">Used</option>
+                        <option value="new">New</option>
+
+                    </select><br> 
+
+                     <h3>price:</h3><br>
+                    <div class="filter_price_box">
+                        <input type="number">
+                        <p>-</p>
+                        <input type="number">
+                    </div><br>
+
+                    <input type="range" class="price_range color-red"><br>
+
+                    <label for="savings & specials"><h3>Savings & specials:</h3></label><br> 
+                    <select id="savings & specials" name="savings & specials">
+                        <option value="price drop">Price Drop</option>
+                        <option value="in-cart savings">In-Cart Savings</option>
+                        <option value="bundles">Bundles</option>
+                        <option value="store demo gear savings">Store Demo Gear Savings</option>
+                        <option value="outlet">Outlet</option>
+                    </select><br>
+                </div>
+            </form>
+            
+            <div class="sort_catalog">
+                <form action="guitar catalog.html" method="get">
+                    <div class="sort_filter backgroundColor-lightGray color-white">
+
+                        <div class="sort_filter_icon">
+                            <ul>
+                                <li class="quick_filter"><i class="fa-solid fa-list"></i><p>Filter</p></li>
+                                <li><i class="fa-solid fa-arrow-up-from-bracket"></i><p>Share</p></li>
+                            </ul>
+                        </div>
+
+                        <h1>Accessories Catalog</h1>
+                        
+                        <div>
+                            <label for="sort option"><h3>Sort Option:</h3></label><br>
+                            <select id="sort option" name="sort option">
+                                <option value="Relevance">Relevance</option>
+                                <option value="Customer Rating">Customer Rating</option>
+                                <option value="Price - High to Low">Price - High to Low</option>
+                                <option value="Price - Low to High">Price - Low to High</option>
+                                <option value="New Arrivals">New Arrivals</option>
+                                <option value="Top Sellers">Top Sellers</option>
+                                <option value="on sale">On Sale</option>
+                                <option value="recommended">Recommended</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </form>
+
+                <div class="catalog">
+
+                    <div class="catalog_product_box" id="1">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/accessories/pedals/DigiTech/DigiTech Drop Polyphonic Drop Tune Pitch Shifter Guitar Effects Pedal.png"></div>
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/accessories brand logos/digitech_w.png">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>DigiTech Drop Polyphonic Drop Tune Pitch Shifter Guitar Effects Pedal</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">DigiTech Drop – shift down up to 7 semitones with zero latency and full harmonic clarity.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">216.95 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>  
+            
+                    <div class="catalog_product_box" id="2">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/accessories/pedals/BOSS/boss ds-1x distortion guitar effects pedal .png"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/accessories brand logos/boss_w.png" alt="boss logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>BOSS DS-1X Distortion Guitar Effects Pedal</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">BOSS DS-1X Pedal – advanced tone shaping, tight low end, and crisp highs for next-gen distortion and clarity.
+
+</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">164.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>
+                                                                        
+                    <div class="catalog_product_box" id="3">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/accessories/pedals/Electro Hamonix/Electro-Harmonix Lizard Queen Octave Fuzz Effects Pedal White.png"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/accessories brand logos/electro-harmonix_w (1).png">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Electro-Harmonix Lizard Queen Octave Fuzz Effects Pedal White</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Lizard Queen Fuzz – unique octave fuzz with rich harmonics, gritty texture, and iconic Electro-Harmonix style.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4>99.00 $</h4>
+                                        <p>-60%</p>
+                                    </div> 
+                                    <h2 class="cost">39.60 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>  
+            
+                    <div class="catalog_product_box" id="4">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/accessories/pedals/mxr/MXR_MB301_Bass_Synth_Effects_Pedal_Gray-removebg-preview.png"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/accessories brand logos/mxr_w.png">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>MXR MB301 Bass Synth Effects Pedal Gray</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">MXR MB301 Synth – deep bass synth tones, analog-style textures, and expressive filters in a compact gray unit.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">269.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div> 
+            
+                    <div class="catalog_product_box" id="5">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/accessories/pedals/ibanez/ibanez_flmini_mini_vintage_flanger_pedal-removebg-preview.png"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/accessories brand logos/ibanez.png">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Ibanez FLMINI Mini Vintage Flanger Pedal</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Ibanez FLMINI Flanger – vintage swirl, compact design, and lush modulation for classic flanger tones in a tiny footprint.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">129.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>
+                                
+                    <div class="catalog_product_box" id="6">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/accessories/pedals/tc electronic/TC_Electronic_Spark_Booster_Guitar_Effects_Pedal-removebg-preview (1).png"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/accessories brand logos/tc-electronic_w.png">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>TC Electronic Spark Booster Guitar Effects Pedal</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Spark Booster Pedal – versatile boost pedal with transparent gain, fat lows, and sparkling highs for any style.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">62.90 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>
+
+                    <div class="catalog_product_box" id="7">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/accessories/pedals/tc electronic/tc_electronic_infinite_sample_sustainer_effects_pedal_blue-removebg-preview.png"></div>
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/accessories brand logos/tc-electronic_w.png">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>TC Electronic Infinite Sample Sustainer Effects Pedal Blue</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Infinite Sustainer Pedal – ambient layering, endless sustain, and creative sampling for dreamy soundscapes and textures.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">129.00 $</h2>
+                                </div>
+                                <button class="buy"><a href="../product page/Product Page.html">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>  
+
+                    <div class="catalog_product_box" id="8">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/accessories/pedals/ibanez/ibanez_9_series_ts9b_bass_tube_screamer_overdrive_bass_effects_pedal_green-removebg-preview.png"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/accessories brand logos/ibanez.png">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3> Ibanez 9 Series TS9B Bass Tube Screamer Overdrive Bass Effects Pedal Green</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">TS9B Bass Screamer – iconic overdrive, tailored EQ, and warm tube-like tone for punchy, expressive bass lines.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">119.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>
+                                                                                            
+                    <div class="catalog_product_box" id="9">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/accessories/pedals/mxr/MXR_M108S_Ten_Band_EQ_Pedal-removebg-preview.png"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/accessories brand logos/mxr_w.png">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>MXR M108S Ten Band EQ Pedal</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">MXR M108S EQ – ten-band precision, powerful tone sculpting, and clean boost for total sound control on stage or in studio.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">149.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>    
+
+                    <div class="catalog_product_box" id="10">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/accessories/pedals/Electro Hamonix/Electro-Harmonix_Oceans_Abyss_Advanced_Reverb_Laboratory_Effects_Pedal_Green-removebg-preview.png"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/accessories brand logos/electro-harmonix_w (1).png">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Electro-Harmonix Oceans Abyss Advanced Reverb Laboratory Effects Pedal Green</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Oceans Abyss Reverb – immersive reverb engine, deep modulation, and studio-grade ambience for lush, atmospheric soundscapes.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">495.00 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div> 
+
+                    <div class="catalog_product_box" id="11">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/accessories/pedals/carl martin/Carl_Martin_Acoustic_GiG_Multi-Effects_Pedal_Tan-removebg-preview.png"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/accessories brand logos/carl-martin_w (1).png" alt="Sterling logo">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Carl Martin Acoustic GiG Multi-Effects Pedal Tan</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Acoustic GiG Pedal – all-in-one acoustic solution with EQ, reverb, and boost for clear, natural tone on any stage.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div> 
+                                    <h2 class="cost">649.00 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>
+                                                    
+                    <div class="catalog_product_box" id="12">
+                        <div class="product_img_box"><img class="product_img" src="../images/products/accessories/pedals/Catalinbread/Used_Catalinbread_carbide_Effect_Pedal-removebg-preview.png"></div> 
+                            <div class="product_top_bar">
+                                <img class="product_logo_img" src="../images/accessories brand logos/catalinbread_w.png">
+                                <div class="product_action">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>                        
+                            <div class="info">
+                                <div class="h3_box">
+                                    <h3>Used Catalinbread carbide Effect Pedal</h3>
+                                </div>
+                                <div class="description_box">
+                                    <p class="description">Catalinbread Carbide – aggressive distortion, sharp attack, and cutting tone for modern metal and high-gain riffing.</p>
+                            </div>
+                            <div class="product_bottom_bar">
+                                <div class="price_box">
+                                    <div class="original_price_box">
+                                        <h4>99.99 $</h4>
+                                        <p>-20%</p>
+                                    </div> 
+                                    <h2 class="cost">79.99 $</h2>
+                                </div>
+                                <button class="buy"><a href="#">Buy Now</i></a></button>                                            
+                            </div>                                                                   
+                        </div>                        
+                    </div>
+
+                </div>
+            </div>    
+        </section>
+    </main>
+    
+    <footer>
+
+        <div class="footer_img">
+            <img class="footer_img_phone" src="../images/footer/atar.png">
+            <p class="footer_text">Stay Tuned - Get the Latest Gear, Deals & News!</p>
+        </div>
+        
+        <div class="footer_content">
+            <div class="footer_4">
+                <div class="footer_3">
+                    <div class="company">
+                        <h3 class="headline_footer">Harmonic Sentral</h3>
+                        <ul>
+                            <li><a class="footer_link" href="#"> Our Story</a></li>
+                            <li><a class="footer_link" href="#">About Us</a></li>
+                            <li><a class="footer_link" href="#">Our Services</a></li>
+                            <li><a class="footer_link" href="#">Privacy Policy</a></li>
+                            <li><a class="footer_link" href="#">Affiliate Program</a></li>
+                        </ul>
+                    </div>
+                    <div class="get_help">
+                        <h3 class="headline_footer">Support & FAQs</h3>
+                        <ul>
+                            <li><a class="footer_link" href="#">FAQ</a></li>
+                            <li><a class="footer_link" href="#">Shipping</a></li>
+                            <li><a class="footer_link" href="#">Returns</a></li>
+                            <li><a class="footer_link" href="#">Order Status</a></li>
+                            <li><a class="footer_link" href="#">Payment Option</a></li>
+                        </ul>
+                    </div>   
+                    <div class="online_shop">
+                        <h3 class="headline_footer">Shop Guitars & Gear</h3>
+                        <ul>
+                            <li><a class="footer_link" href="#">Guitars & Basses</a></li>
+                            <li><a class="footer_link" href="#">Accessories & Effects</a></li>
+                            <li><a class="footer_link" href="#">Audio, DJ & Recording</a></li>
+                            <li><a class="footer_link" href="#">Headphones & Speakers</a></li>
+                            <li><a class="footer_link" href="#">Merchandise</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    <div class="summary">
+                        <div class="summary_p">
+                        <p>Harmonic Sentral™ - Play, Discover & Elevate Your Sound</p>
+                        <p> 2025 Nuriel Altstein © - All Rights Reserved</p>
+                        </div>
+                </div>
+            </div>    
+            <div class="follow_us">
+                <h3 class="headline_footer">Join the Harmonic Sentral Community</h3>
+                <div class="icons">
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                    </ul>
+                </div>  
+                    <form class="Subscribe_form" action="product.html" method="get">        
+                <div class="Subscribe">
+                    <h3 class="headline_footer_Subscribe">Stay Tuned - Get Exclusive Deals & Guitar News!</h3>
+                    <p>Subscribe to our newsletter and get the latest on guitars, gear, and special offers - straight to your inbox!</p>
+                    <div class="input_box">
+                        <input type="email" id="Subscribe" placeholder="your-mail@gmail.com" required>
+                        <label class="Subscribe_label" for="Subscribe">Subscribe</label>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </div>
+                    </form>        
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>
