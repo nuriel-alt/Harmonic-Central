@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <header> 
+    <header id="catalog_header"> 
 
         <nav>
             <img class="web_logo" src="../images/web logo/2.png" alt="brand" height="60" width="155">
@@ -100,35 +100,36 @@
             </form>
             
             <div class="sort_catalog">
-                <form action="guitar catalog.html" method="get">
-                    <div class="sort_filter backgroundColor-lightGray color-white">
+                <div id="sort_catalog_box">
+                    <form action="guitar catalog.html" method="get">
+                        <div class="sort_filter backgroundColor-lightGray color-white">
 
-                        <div class="sort_filter_icon">
-                            <ul>
-                                <li class="quick_filter"><i class="fa-solid fa-list"></i><p>Filter</p></li>
-                                <li><i class="fa-solid fa-arrow-up-from-bracket"></i><p>Share</p></li>
-                            </ul>
+                            <div class="sort_filter_icon">
+                                <ul>
+                                    <li class="quick_filter"><i class="fa-solid fa-list"></i><p>Filter</p></li>
+                                    <li><i class="fa-solid fa-arrow-up-from-bracket"></i><p>Share</p></li>
+                                </ul>
+                            </div>
+
+                            <h1>Accessories Catalog</h1>
+                            
+                            <div>
+                                <label for="sort option"><h3>Sort Option:</h3></label><br>
+                                <select id="sort option" name="sort option">
+                                    <option value="Relevance">Relevance</option>
+                                    <option value="Customer Rating">Customer Rating</option>
+                                    <option value="Price - High to Low">Price - High to Low</option>
+                                    <option value="Price - Low to High">Price - Low to High</option>
+                                    <option value="New Arrivals">New Arrivals</option>
+                                    <option value="Top Sellers">Top Sellers</option>
+                                    <option value="on sale">On Sale</option>
+                                    <option value="recommended">Recommended</option>
+                                </select>
+                            </div>
+
                         </div>
-
-                        <h1>Accessories Catalog</h1>
-                        
-                        <div>
-                            <label for="sort option"><h3>Sort Option:</h3></label><br>
-                            <select id="sort option" name="sort option">
-                                <option value="Relevance">Relevance</option>
-                                <option value="Customer Rating">Customer Rating</option>
-                                <option value="Price - High to Low">Price - High to Low</option>
-                                <option value="Price - Low to High">Price - Low to High</option>
-                                <option value="New Arrivals">New Arrivals</option>
-                                <option value="Top Sellers">Top Sellers</option>
-                                <option value="on sale">On Sale</option>
-                                <option value="recommended">Recommended</option>
-                            </select>
-                        </div>
-
-                    </div>
-                </form>
-
+                    </form>
+                </div>
                 <div class="catalog">
 
                     <div class="catalog_product_box" id="1">
@@ -174,9 +175,7 @@
                                     <h3>BOSS DS-1X Distortion Guitar Effects Pedal</h3>
                                 </div>
                                 <div class="description_box">
-                                    <p class="description">BOSS DS-1X Pedal – advanced tone shaping, tight low end, and crisp highs for next-gen distortion and clarity.
-
-</p>
+                                    <p class="description">BOSS DS-1X Pedal – advanced tone shaping, tight low end, and crisp highs for next-gen distortion and clarity.</p>
                             </div>
                             <div class="product_bottom_bar">
                                 <div class="price_box">
@@ -558,8 +557,76 @@
             </div>
         </div>
     </footer>
+<section class="menu_overlay"></section>
+<section class="side_menu">
+    <div class="menu_close"><i class="menu_close_icon fa-solid fa-xmark"></i></div>
+    <ul class="side_ul_menu">
+        <li class="side_li_nav"><a href="../index.html" class="side_a_nav_home"><div class="side_nav_content"><i class="side_nav_i fa-solid fa-house"></i><p>Home</p></div></a></li>
+        <li class="side_li_nav"><a href="../contact/Contact Page.html" class="side_a_nav"><div class="side_nav_content"><i class="fa-solid fa-comments"></i><p>Contact</p></div></a></li>
+        <li class="side_li_nav"><a href="#" class="side_a_nav"><div class="side_nav_content"><i class="fa-solid fa-box-open"></i><p>Products</p></div></a></li>
+        <li class="side_li_nav"><a href="#" class="side_a_nav"><div class="side_nav_content"><i class="fa-solid fa-circle-info"></i><p>About</p></div></a></li>
+        <li class="side_li_nav"><a href="#" class="side_a_nav"><div class="side_nav_content"><i class="fa-solid fa-tags"></i><p>Deals</p></div></a></li>
+        <li class="side_li_nav"><a href="#" class="side_a_nav"><div class="side_nav_content"><i class="fa-solid fa-paper-plane"></i><p>Newsletter</p></div></a></li>
+    </ul>
+</section>
+<section class="catalog_overlay"></section>
+<section class="side_filter">
+                <form action="accessories catalog.html" method="get">
+                <div class="side_filter_open backgroundColor-lightGray color-white">
 
+                    <h2>Find Your Perfect Tone</h2><br>
 
+                    <label for="category"><h3>Category:</h3></label><br>
+                    <select id="category" name="category">
+                        <option value="effects pedals">Effects Pedals</option>
+                        <option value="multi-effects pedals">Multi-Effects Pedals</option>
+                        <option value="effects pedal accessories">Effects Pedal Accessories</option>
+                        <option value="pedalboards">Pedalboards</option>
+                        <option value="effects pedal packages">Effects Pedal Packages</option>
+                    </select><br>
 
+                    <label for="brand"><h3>brand:</h3></label><br>
+                    <select id="brand" name="brand">
+                        <option value="TC Electronic">TC Electronic</option>
+                        <option value="DigiTech">DigiTech</option>
+                        <option value="BOSS">BOSS</option>
+                        <option value="Ibanez">Ibanez</option>
+                        <option value="Line 6">Line 6</option>
+                        <option value="MXR">MXR</option>
+                        <option value="Dunlop">Dunlop</option>
+                        <option value="Keeley">Keeley</option>
+                        <option value="EarthQuaker Devices">EarthQuaker Devices</option>
+                        <option value="MXR">MXR</option>
+                        <option value="Electro Hamonix">Electro Hamonix</option>
+                    </select><br>
+
+                    <label for="condition"><h3>Condition:</h3></label><br>
+                    <select id="condition" name="condition">
+                        <option value="used">Used</option>
+                        <option value="new">New</option>
+
+                    </select><br> 
+
+                     <h3>price:</h3><br>
+                    <div class="filter_price_box">
+                        <input type="number">
+                        <p>-</p>
+                        <input type="number">
+                    </div><br>
+
+                    <input type="range" class="price_range color-red"><br>
+
+                    <label for="savings & specials"><h3>Savings & specials:</h3></label><br> 
+                    <select id="savings & specials" name="savings & specials">
+                        <option value="price drop">Price Drop</option>
+                        <option value="in-cart savings">In-Cart Savings</option>
+                        <option value="bundles">Bundles</option>
+                        <option value="store demo gear savings">Store Demo Gear Savings</option>
+                        <option value="outlet">Outlet</option>
+                    </select><br>
+                </div>
+            </form>
+</section>
+<script src="../Harmonic Central.js"></script>
 </body>
 </html>

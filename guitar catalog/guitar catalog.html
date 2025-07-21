@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <header> 
+    <header id="catalog_header"> 
 
         <nav>
             <img class="web_logo" src="../images/web logo/2.png" alt="brand" height="60" width="155">
@@ -141,34 +141,36 @@
             </form>
             
             <div class="sort_catalog">
-                <form action="guitar catalog.html" method="get">
-                    <div class="sort_filter backgroundColor-lightGray color-white">
+                <div id="sort_catalog_box">
+                    <form action="guitar catalog.html" method="get">
+                        <div class="sort_filter backgroundColor-lightGray color-white">
 
-                        <div class="sort_filter_icon">
-                            <ul>
-                                <li class="quick_filter"><i class="fa-solid fa-list"></i><p>Filter</p></li>
-                                <li><i class="fa-solid fa-arrow-up-from-bracket"></i><p>Share</p></li>
-                            </ul>
+                            <div class="sort_filter_icon">
+                                <ul>
+                                    <li class="quick_filter"><i class="fa-solid fa-list"></i><p>Filter</p></li>
+                                    <li><i class="fa-solid fa-arrow-up-from-bracket"></i><p>Share</p></li>
+                                </ul>
+                            </div>
+
+                            <h1>Guitar Catalog</h1>
+                            
+                            <div>
+                                <label for="sort option"><h3>Sort Option:</h3></label><br>
+                                <select id="sort option" name="sort option">
+                                    <option value="Relevance">Relevance</option>
+                                    <option value="Customer Rating">Customer Rating</option>
+                                    <option value="Price - High to Low">Price - High to Low</option>
+                                    <option value="Price - Low to High">Price - Low to High</option>
+                                    <option value="New Arrivals">New Arrivals</option>
+                                    <option value="Top Sellers">Top Sellers</option>
+                                    <option value="on sale">On Sale</option>
+                                    <option value="recommended">Recommended</option>
+                                </select>
+                            </div>
+
                         </div>
-
-                        <h1>Guitar Catalog</h1>
-                        
-                        <div>
-                            <label for="sort option"><h3>Sort Option:</h3></label><br>
-                            <select id="sort option" name="sort option">
-                                <option value="Relevance">Relevance</option>
-                                <option value="Customer Rating">Customer Rating</option>
-                                <option value="Price - High to Low">Price - High to Low</option>
-                                <option value="Price - Low to High">Price - Low to High</option>
-                                <option value="New Arrivals">New Arrivals</option>
-                                <option value="Top Sellers">Top Sellers</option>
-                                <option value="on sale">On Sale</option>
-                                <option value="recommended">Recommended</option>
-                            </select>
-                        </div>
-
-                    </div>
-                </form>
+                    </form>
+                </div>
 
                 <div class="catalog">
 
@@ -597,8 +599,118 @@
             </div>
         </div>
     </footer>
+<section class="menu_overlay"></section>
+<section class="side_menu">
+    <div class="menu_close"><i class="menu_close_icon fa-solid fa-xmark"></i></div>
+    <ul class="side_ul_menu">
+        <li class="side_li_nav"><a href="../index.html" class="side_a_nav_home"><div class="side_nav_content"><i class="side_nav_i fa-solid fa-house"></i><p>Home</p></div></a></li>
+        <li class="side_li_nav"><a href="../contact/Contact Page.html" class="side_a_nav"><div class="side_nav_content"><i class="fa-solid fa-comments"></i><p>Contact</p></div></a></li>
+        <li class="side_li_nav"><a href="#" class="side_a_nav"><div class="side_nav_content"><i class="fa-solid fa-box-open"></i><p>Products</p></div></a></li>
+        <li class="side_li_nav"><a href="#" class="side_a_nav"><div class="side_nav_content"><i class="fa-solid fa-circle-info"></i><p>About</p></div></a></li>
+        <li class="side_li_nav"><a href="#" class="side_a_nav"><div class="side_nav_content"><i class="fa-solid fa-tags"></i><p>Deals</p></div></a></li>
+        <li class="side_li_nav"><a href="#" class="side_a_nav"><div class="side_nav_content"><i class="fa-solid fa-paper-plane"></i><p>Newsletter</p></div></a></li>
+    </ul>
+</section>
 
+<section class="catalog_overlay"></section>
+<section class="side_filter">
+               <form action="guitar catalog.html" method="get">
+                <div class="side_filter_open backgroundColor-lightGray color-white">
 
+                    <h2>Find Your Perfect Tone</h2><br>
 
+                    <label for="type"><h3>Type:</h3></label><br>
+                    <select id="type" name="type">
+                        <option value="electric">Electric</option>
+                        <option value="Acoustic">Acoustic</option>
+                        <option value="Classical">Classical</option>
+                        <option value="Bass">Bass</option>
+                        <option value="Acoustic-Electric">Acoustic-Electric</option>
+                        <option value="Travel/Mini">Travel/Mini</option>
+                        <option value="Baritone">Baritone</option>
+                    </select><br>
+
+                    <label for="brand"><h3>brand:</h3></label><br>
+                    <select id="brand" name="brand">
+                        <option value="Fender">Fender</option>
+                        <option value="Gibson">Gibson</option>
+                        <option value="Ibanez">Ibanez</option>
+                        <option value="PRS">PRS</option>
+                        <option value="Yamaha">Yamaha</option>
+                        <option value="ESP">ESP</option>
+                        <option value="Jackson">Jackson</option>
+                        <option value="Martin">Martin</option>
+                        <option value="Taylor">Taylor</option>
+                    </select><br>
+
+                    <label for="submobdel"><h3>submobdel:</h3></label><br>
+                    <select id="submobdel" name="submobdel">
+                        <option value="Fender Stratocaster">Stratocaster</option>
+                        <option value="Fender Telecaster">Telecaster</option>
+                        <option value="Fender Jazzmaster">Jazzmaster</option>
+                        <option value="Fender Jaguar">Jaguar</option>
+                        <option value="Fender Mustang">Mustang</option>
+                        <option value="Gibson Les Paul">Les Paul</option>
+                        <option value="Gibson SG">SG</option>
+                        <option value="Gibson ES-335">ES-335</option>
+                        <option value="Gibson Flying V">Flying V</option>
+                        <option value="Gibson Explorer">Explorer</option>
+                        <option value="Ibanez RG">RG</option>
+                        <option value="Ibanez S Series">S Series</option>
+                        <option value="Ibanez AZ">AZ</option>
+                        <option value="Ibanez Artcore">Artcore</option>
+                        <option value="Ibanez GIO">GIO</option>
+                        <option value="PRS Custom 24">Custom 24</option>
+                        <option value="PRS SE Series">SE Series</option>
+                        <option value="PRS McCarty">McCarty</option>
+                        <option value="PRS Silver Sky">Silver Sky</option>
+                    </select><br> 
+
+                     <h3>price:</h3><br>
+                    <div class="filter_price_box">
+                        <input type="number">
+                        <p>-</p>
+                        <input type="number">
+                    </div><br>
+
+                    <input type="range" class="price_range color-red"><br>
+
+                    <label for="Number of Strings"><h3>Number of Strings:</h3></label><br>
+                    <select id="Number of Strings" name="Number of Strings">
+                        <option value="6 Strings">6 Strings</option>
+                        <option value="7 Strings">7 Strings</option>
+                        <option value="8 Strings">8 Strings</option>
+                        <option value="12 Strings">12 Strings</option>
+                    </select><br>
+
+                    <label for="color"><h3>Color:</h3></label><br>
+                    <input type="color" id="color" name="color"><br>
+
+                    <label for="Scale Length"><h3>Scale Length:</h3></label><br>
+                    <select id="Scale Length" name="Scale Length">
+                        <option value="Short Scale">Short Scale</option>
+                        <option value="Medium Scale">Medium Scale</option>
+                        <option value="Long Scale">Long Scale</option>
+                    </select><br> 
+
+                    <label for="Pickups"><h3>(for electric) Pickups:</h3></label><br> 
+                    <select id="Pickups" name="Pickups">
+                        <option value="Single Coil">Single Coil</option>
+                        <option value="Humbucker">Humbucker</option>
+                        <option value="P90">P90</option>
+                        <option value="Piezo">Piezo</option>
+                    </select><br>
+
+                    <label for="Additional Features"><h3>Additional Features:</h3></label><br> 
+                    <select id="Additional Features" name="Additional Features">
+                        <option value="Left-Handed">Left-Handed</option>
+                        <option value="Bundle Included">Bundle Included</option>
+                        <option value="Case Included">Case Included</option>
+                        <option value="Tremolo System">Tremolo System</option>
+                    </select><br>
+                </div>
+            </form> 
+</section>
+<script src="../Harmonic Central.js"></script>
 </body>
 </html>
