@@ -302,12 +302,12 @@ nav {
 .categories_section {
     color: #DDDDDD;
     filter: drop-shadow( 2px 2px 2px black);
-    padding-left: 40px;
-    padding-top: 40px;
+    margin-left: 40px;
+    padding: 20px 0px;
 }
 
 .categories {
-    height: 400px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -325,79 +325,29 @@ nav {
     width: auto;
     color: white;
     text-align: center;
-    font-size: 40px;
 }
 
-.guitars {
-    background-image: url(images/categories/guitrs.png);
-    background-size: cover; 
-    height: 300px;
-    width: 300px;
-    border-radius: 25%;
-    box-shadow: 0px 0px 8px 4px black;
-    transition: transform ease-in-out 1s;
+.catalog_link {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    transition: transform ease-in-out 1s;
 }
 
-.guitars:hover {
+.catalog_link:hover {
     transform: scale(1.1);
     transition: 1s;
 }
 
-.accessories {
-    background-image: url(images/categories/Guitar\ Accessories.png);
-    background-size: cover; 
-    height: 300px;
-    width: 300px;
-    border-radius: 25%;
-    box-shadow: 0px 0px 8px 4px black;
-    transition: transform ease-in-out 1s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.catalog_link h2 {
+    width: 200px;
+    height: 55px;
 }
 
-.accessories:hover {
-    transform: scale(1.1);
-    transition: 1s;
-}
-
-.equipment {
-    background-image: url(images/categories/Recording\ Equipment.png);
-    background-size: cover; 
-    height: 300px;
-    width: 300px;
-    border-radius: 25%;
-    box-shadow: 0px 0px 8px 4px black;
-    transition: transform ease-in-out 1s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.equipment:hover {
-    transform: scale(1.1);
-    transition: 1s;
-}
-
-.amps {
-    background-image: url(images/categories/amps\ &\ speakers.png);
-    background-size: cover; 
-    height: 300px;
-    width: 300px;
-    border-radius: 25%;
-    box-shadow: 0px 0px 8px 4px black;
-    transition: transform ease-in-out 1s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.amps:hover {
-    transform: scale(1.1);
-    transition: 1s;
+.icon_catalog {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 10px;
 }
 
 .brands_box{
@@ -1163,40 +1113,16 @@ footer {
         padding: 10px;
     }
 
-    .guitars {
+    .catalog_link {
         height: auto;
         aspect-ratio: 1/1;
         width: calc(50% - 20px);
-        border-radius: 25%;
-        margin: 10px;
-    }
-
-    .accessories {
-        height: auto;
-        aspect-ratio: 1/1;
-        width: calc(50% - 20px);
-        border-radius: 25%;
-        margin: 10px;
-    }
-
-    .equipment {
-        height: auto;
-        aspect-ratio: 1/1;
-        width: calc(50% - 20px);
-        border-radius: 25%;
-        margin: 10px;
-    }
-
-    .amps {
-        height: auto;
-        aspect-ratio: 1/1;
-        width: calc(50% - 20px);
-        border-radius: 25%;
         margin: 10px;
     }
 
     .categories h2 {
-        font-size: 20px;
+        font-size: 18px;
+        width: 150px;
     }
 
     .left {
@@ -1288,7 +1214,7 @@ footer {
     }
 
     .footer_img_phone {
-        left: 38%;
+        left: 14%;
     }
 
     .footer_text{
@@ -1469,36 +1395,15 @@ footer {
         padding: 10px;
     }
 
-    .guitars {
+    .catalog_link {
         height: auto;
         aspect-ratio: 1/1;
         width: calc(25% - 40px);
-        border-radius: 25%;
         margin: 20px;
     }
 
-    .accessories {
-        height: auto;
-        aspect-ratio: 1/1;
-        width: calc(25% - 40px);
-        border-radius: 25%;
-        margin: 20px;
-    }
-
-    .equipment {
-        height: auto;
-        aspect-ratio: 1/1;
-        width: calc(25% - 40px);
-        border-radius: 25%;
-        margin: 20px;
-    }
-
-    .amps {
-        height: auto;
-        aspect-ratio: 1/1;
-        width: calc(25% - 40px);
-        border-radius: 25%;
-        margin: 20px;
+    .catalog_link h2 {
+        width: 150px;
     }
 
     .categories h2 {
@@ -1586,7 +1491,7 @@ footer {
     }
 
     .footer_img_phone {
-        left: 60%;
+        left: 50%;
     }
 
     .footer_text{
@@ -1758,35 +1663,10 @@ footer {
         padding: 10px;
     }
 
-    .guitars {
+    .catalog_link {
         height: auto;
         aspect-ratio: 1/1;
         width: calc(25% - 40px);
-        border-radius: 25%;
-        margin: 20px;
-    }
-
-    .accessories {
-        height: auto;
-        aspect-ratio: 1/1;
-        width: calc(25% - 40px);
-        border-radius: 25%;
-        margin: 20px;
-    }
-
-    .equipment {
-        height: auto;
-        aspect-ratio: 1/1;
-        width: calc(25% - 40px);
-        border-radius: 25%;
-        margin: 20px;
-    }
-
-    .amps {
-        height: auto;
-        aspect-ratio: 1/1;
-        width: calc(25% - 40px);
-        border-radius: 25%;
         margin: 20px;
     }
 
@@ -2019,35 +1899,10 @@ footer {
         padding: 10px;
     }
 
-    .guitars {
+    .catalog_link {
         height: auto;
         aspect-ratio: 1/1;
         width: calc(25% - 40px);
-        border-radius: 25%;
-        margin: 20px;
-    }
-
-    .accessories {
-        height: auto;
-        aspect-ratio: 1/1;
-        width: calc(25% - 40px);
-        border-radius: 25%;
-        margin: 20px;
-    }
-
-    .equipment {
-        height: auto;
-        aspect-ratio: 1/1;
-        width: calc(25% - 40px);
-        border-radius: 25%;
-        margin: 20px;
-    }
-
-    .amps {
-        height: auto;
-        aspect-ratio: 1/1;
-        width: calc(25% - 40px);
-        border-radius: 25%;
         margin: 20px;
     }
 
