@@ -30,7 +30,9 @@ sideMenuLink.forEach(element => {
 
 // סגירת ופתיחה של תפריט קטלוג
 let changeSideCatalog = document.querySelector('.quick_filter');
-changeSideCatalog.addEventListener('click', changeSideCatalogFunction);
+if(changeSideCatalog){
+    changeSideCatalog.addEventListener('click', changeSideCatalogFunction);
+}
 
 function changeSideCatalogFunction(event) {
     let sideFilter = document.querySelector('.side_filter');
@@ -64,44 +66,12 @@ fetch('../data/products.json')
     products.forEach(product => {
         creator(product);
     });
-
-    // קריאה לפונקציות צבע אייקון בהתאם ללוקאלסטורג
-    updateWishlistHearts();
-    updatecarts();
 })
 .catch(error => console.error('error in json:', error));
 
-
-// עדכון צבע אייקון לב בהתאם ללוקאלסטורג
-function updateWishlistHearts() {
-    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-    wishlist.forEach(savedItem => {
-        const productBox = document.getElementById(savedItem.id);
-        if(productBox) {
-            const heart = productBox.querySelector('.heart_icon');
-            if(heart){
-                heart.classList.add('heart_icon_click');
-            }
-        }
-    });
-}
-
-// עדכון צבע אייקון עגלה בהתאם ללוקאלסטורג
-function updatecarts() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.forEach(savedItem => {
-        const productBox = document.getElementById(savedItem.id);
-        if(productBox) {
-            const cart = productBox.querySelector('.cart_icon');
-            if(heart){
-                heart.classList.add('cart_icon_click');
-            }
-        }
-    });
-}
-
 // פונקציה ראשית המפעילה את כל הפונקציות לאחר קבלת נתונים מהשרת
 function creator(product){
+
     // קריאה לפונקציה של בניית כרטיס מוצר
     productCreator(product);
 
@@ -115,6 +85,10 @@ function creator(product){
     if(cart)
         cart.addEventListener('click', saveToCart);
     });
+
+    // קריאה לפונקציות צבע אייקון בהתאם ללוקאלסטורג
+    updateWishlistIcon();
+    updatecartIcon();
 }
 
 // בניית כרטיסיית מוצר 
@@ -252,7 +226,12 @@ function productCreator(product){
 // שמירת הנתונים של המוצר בלוקאלסטורג' למועדפים + צביעה של אייקון לב באדום
 function saveToWishlist(event){
     const heartIconClick = event.currentTarget;
-    heartIconClick.classList.toggle('heart_icon_click');
+    if(heartIconClick.classList.contains('heart_icon_click')){
+        heartIconClick.classList.remove('heart_icon_click');
+    }
+    else{
+        heartIconClick.classList.add('heart_icon_click');
+    }
 
     // מציאת כרטיס המוצר 
     const productBox = heartIconClick.closest('.catalog_product_box');
@@ -300,10 +279,193 @@ function saveToWishlist(event){
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
 }
 
+// עדכון צבע אייקון לב בהתאם ללוקאלסטורג לאחר רענון
+function updateWishlistIcon() {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    wishlist.forEach(savedItem => {
+        const productBox = document.getElementById(savedItem.id);
+        if(productBox) {
+            const heart = productBox.querySelector('.heart_icon');
+            if(heart){
+                heart.classList.add('heart_icon_click');
+            }
+        }
+    });
+}
+
+// רענון המוצרים בווישליסט בעת רענון או טעינת הדף 
+document.addEventListener('DOMContentLoaded', () => {
+    getItemsFromLocalstorage();
+});
+
+// טעינת מוצרים מלוקלסטורג + זימון פונקציית בניה של כרטיס מועדפים
+function getItemsFromLocalstorage() {
+    const getWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const container = document.querySelector('#wishlist_ul');
+    if(!container){
+        console.warn('container is not found')
+        return;
+    }
+
+    container.innerHTML = '';
+
+    if (getWishlist.length === 0){
+        return;
+    }
+
+    getWishlist.forEach(product => {
+        wishlistCreator(product);
+    });
+
+    // קריאה לפונקציה שמזינה אירוע עבור מחיקת מוצר
+    deletEvents();
+
+    const qtyInWishlist = document.querySelectorAll('.qty_in_wishlist');
+    qtyInWishlist.forEach(item => {
+        if(qtyInWishlist){
+            item.textContent = 'Total: ' + getWishlist.length + ' items in your Wishlist';
+        }
+    });
+}
+
+// בניית כרטיס מועדפים 
+function wishlistCreator(productData){
+    // יצירת אלמנט ליסט
+    const wishlistItem = document.createElement('li');
+    wishlistItem.setAttribute('data-id', productData.id)
+
+    // תיבת מוצר מועדפים
+    const wishlistBox = document.createElement('div');
+    wishlistBox.classList.add('wishlist_product_box');
+
+    // תמונת מוצר
+    const imgBox  = document.createElement('div');
+    imgBox .classList.add('wishlist_img');
+
+    const img = document.createElement('img');
+    img.src = productData.image;
+    img.alt = '';
+
+    imgBox.appendChild(img);
+
+    // תיאור מוצר
+    const descriptionBox = document.createElement('div');
+    descriptionBox.classList.add('wishlist_description');
+
+    // תיבת מחיר
+    const priceBox = document.createElement('div');
+    priceBox.classList.add('wishlist_price_box');
+
+    const originalPriceBox = document.createElement('div');
+    originalPriceBox.classList.add('wishlist_original_price_box');
+
+    const originalPrice = document.createElement('h4');
+    originalPrice.textContent = productData.originalPrice;
+
+    const discount = document.createElement('p');
+    discount.textContent = productData.discount;
+
+    originalPriceBox.appendChild(originalPrice);
+    originalPriceBox.appendChild(discount);
+
+    const finalPrice = document.createElement('h2');
+    finalPrice.classList.add('wishlist_cost');
+    finalPrice.textContent = productData.finalPrice;
+
+    priceBox.appendChild(originalPriceBox);
+    priceBox.appendChild(finalPrice);
+
+    // שם המוצר (בתוספת לינק)
+    const nameBox = document.createElement('div');
+    nameBox.classList.add('wishlist_product_name');
+
+    const nameH3 = document.createElement('h3');
+    const nameLink = document.createElement('a');
+    nameLink.href = productData.buyLink;
+    nameLink.textContent = productData.name;
+
+    nameH3.appendChild(nameLink);
+    nameBox.appendChild(nameH3);
+
+    // תיאור המוצר 
+    const descTextBox = document.createElement('div');
+    descTextBox.classList.add('wishlist_product_description');
+
+    const descP = document.createElement('p');
+    descP.textContent = productData.description;
+    descTextBox.appendChild(descP);
+
+    // כפתור דחיפה לעגלה
+    const moveBtn = document.createElement('button');
+
+    const cartIcon = document.createElement('i');
+    cartIcon.classList.add('fa-solid', 'fa-cart-shopping');
+
+    moveBtn.appendChild(cartIcon);
+    moveBtn.append('Move to Cart');
+
+    // אייקון מחיקה
+    const deleteIcon = document.createElement('i');
+    deleteIcon.classList.add('delete_product', 'fa-solid', 'fa-xmark');
+
+    // חיבור החלקים
+    descriptionBox.appendChild(priceBox);
+    descriptionBox.appendChild(nameBox);
+    descriptionBox.appendChild(descTextBox);
+    descriptionBox.appendChild(moveBtn);
+
+    wishlistBox.appendChild(imgBox);
+    wishlistBox.appendChild(descriptionBox);
+    wishlistBox.appendChild(deleteIcon);
+
+    wishlistItem.appendChild(wishlistBox);
+
+    // הכנסת כרטיס מועדפים לדום
+    document.querySelector('#wishlist_ul').appendChild(wishlistItem);
+};
+
+// בניית פונקציה שמזינה אירוע לכל הפריטים למחיקת המוצר
+function deletEvents(){
+    const deleteButtons = document.querySelectorAll('.delete_product');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', removeFromWishlist)
+    });
+}
+
+// פונקציה למחיקת פריט ווישליסט מהדום ומהזיכרון
+function removeFromWishlist(event){
+    // מחיקת פריט מהדום
+    const deleteBtn = event.currentTarget;
+    const listItem = deleteBtn.closest('li');
+    if(!listItem){
+        return;
+    }
+    listItem.remove();
+
+    const productId = listItem.getAttribute('data-id');
+    
+    // מחיקה פריט מהזיכרון
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    wishlist = wishlist.filter(item => item.id !== productId);
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+    const qtyInWishlist = document.querySelectorAll('.qty_in_wishlist');
+    qtyInWishlist.forEach(item => {
+        if(qtyInWishlist){
+            item.textContent = 'Total: ' + wishlist.length + ' items in your Wishlist';
+        }
+    });
+}
+
 // שמירת הנתונים של המוצר בלוקאלסטורג' לעגלה + צביעה של אייקון עגלה באדום
 function saveToCart(event){
     const cartIconClick = event.currentTarget;
-    cartIconClick.classList.toggle('cart_icon_click');
+    if(cartIconClick.classList.contains('cart_icon_click')){
+        cartIconClick.classList.remove('cart_icon_click');
+    }
+    else{
+        cartIconClick.classList.add('cart_icon_click');
+    }
 
     // מציאת כרטיס המוצר 
     const productBox = cartIconClick.closest('.catalog_product_box');
@@ -352,104 +514,19 @@ function saveToCart(event){
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-
-
-
-// בניית כרטיס מועדפים 
-function wishlistCreator(event){
-    // יצירת אלמנט ליסט
-    const wishlistItem = document.createElement('li');
-
-    // תיבת מוצר מועדפים
-    const wishlistBox = document.createElement('div');
-    wishlistBox.classList.add('wishlist_product_box');
-
-    // תמונת מוצר
-    const imgBox  = document.createElement('div');
-    imgBox .classList.add('wishlist_img');
-
-    const img = document.createElement('img');
-    img.src = '../images/products/guitars/Acoustic Guitars/PRS/PRS SE A50E Acoustic-Electric Guitar Fire Red Burst.png';
-    img.alt = 'Sterling Guitar';
-
-    imgBox.appendChild(img);
-
-    // תיאור מוצר
-    const descriptionBox = document.createElement('div');
-    descriptionBox.classList.add('wishlist_description');
-
-    // תיבת מחיר
-    const priceBox = document.createElement('div');
-    priceBox.classList.add('wishlist_price_box');
-
-    const originalPriceBox = document.createElement('div');
-    originalPriceBox.classList.add('wishlist_original_price_box');
-
-    const originalPrice = document.createElement('h4');
-    originalPrice.textContent = '249.99 $';
-
-    const discount = document.createElement('p');
-    discount.textContent = '-10%';
-
-    originalPriceBox.appendChild(originalPrice);
-    originalPriceBox.appendChild(discount);
-
-    const finalPrice = document.createElement('h2');
-    finalPrice.classList.add('wishlist_cost');
-    finalPrice.textContent = '949.00 $';
-
-    priceBox.appendChild(originalPriceBox);
-    priceBox.appendChild(finalPrice);
-
-    // שם המוצר (בתוספת לינק)
-    const nameBox = document.createElement('div');
-    nameBox.classList.add('wishlist_product_name');
-
-    const nameH3 = document.createElement('h3');
-    const nameLink = document.createElement('a');
-    nameLink.href = '../guitar catalog/guitar catalog.html#3';
-    nameLink.textContent = 'PRS SE A50E Acoustic-Electric Guitar Fire Red Burst';
-
-    nameH3.appendChild(nameLink);
-    nameBox.appendChild(nameH3);
-
-    // תיאור המוצר 
-    const descTextBox = document.createElement('div');
-    descTextBox.classList.add('wishlist_product_description');
-
-    const descP = document.createElement('p');
-    descP.textContent = 'PRS SE A50E in Fire Red Burst – Rich tone, smooth playability, and elegant design for dynamic acoustic performance';
-    descTextBox.appendChild(descP);
-
-    // כפתור דחיפה לעגלה
-    const moveBtn = document.createElement('button');
-
-    const cartIcon = document.createElement('i');
-    cartIcon.classList.add('fa-solid', 'fa-cart-shopping');
-
-    moveBtn.appendChild(cartIcon);
-    moveBtn.append('Move to Cart');
-
-    // אייקון מחיקה
-    const deleteIcon = document.createElement('i');
-    deleteIcon.classList.add('delete_product', 'fa-solid', 'fa-xmark');
-
-    // חיבור החלקים
-    descriptionBox.appendChild(priceBox);
-    descriptionBox.appendChild(nameBox);
-    descriptionBox.appendChild(descTextBox);
-    descriptionBox.appendChild(moveBtn);
-
-    wishlistBox.appendChild(imgBox);
-    wishlistBox.appendChild(descriptionBox);
-    wishlistBox.appendChild(deleteIcon);
-
-    wishlistItem.appendChild(wishlistBox);
-
-    // הכנסת כרטיס מועדפים לדום
-
-
-};
+// עדכון צבע אייקון עגלה בהתאם ללוקאלסטורג לאחר רענון
+function updatecartIcon() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.forEach(savedItem => {
+        const productBox = document.getElementById(savedItem.id);
+        if(productBox) {
+            const cart = productBox.querySelector('.cart_icon');
+            if(heart){
+                heart.classList.add('cart_icon_click');
+            }
+        }
+    });
+}
 
 // בניית כרטיס עגלה 
 function cartCreator(event){
