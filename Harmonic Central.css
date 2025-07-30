@@ -2394,7 +2394,6 @@ footer {
 .cart_img {
     height: 160px;
     width: 160px;
-    background-color: #676767;
     margin-right: 30px;
     flex-shrink: 0;
 }
@@ -2484,11 +2483,12 @@ footer {
     position: absolute;
     right: 10px;
     top: 20px;
+    cursor: pointer;
 }
 
 .cart_overview {
     width: 100%;
-    padding: 20px 0px;
+    padding: 20px 10px;
     border-bottom: #676767 1px dashed;
     display: flex;
     justify-content: space-between;
@@ -2680,7 +2680,7 @@ footer {
 
     .cart_original_price_box {
         height: 10px;
-        width: 70px;
+        width: 76px;
     }
 
     .cart_cost {
@@ -3143,11 +3143,12 @@ footer {
     position: absolute;
     right: 10px;
     top: 20px;
+    cursor: pointer;
 }
 
 .wishlist_overview {
     width: 100%;
-    padding: 20px 0px;
+    padding: 20px 10px;
     border-bottom: #676767 1px dashed;
     display: flex;
     justify-content: space-between;
@@ -3230,7 +3231,7 @@ footer {
 
     .wishlist_original_price_box {
         height: 10px;
-        width: 70px;
+        width: 76px;
     }
 
     .wishlist_cost {

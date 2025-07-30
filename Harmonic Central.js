@@ -58,7 +58,7 @@ function changeSideCatalogFunction(event) {
     }
 }
 
-// הכנסת מוצרים מג'ייסון לקטלוג גיטרות
+// הכנסת מוצרים מג'ייסון לקטלוג 
 fetch('../data/products.json')
 
 .then(response => response.json())
@@ -88,7 +88,7 @@ function creator(product){
 
     // קריאה לפונקציות צבע אייקון בהתאם ללוקאלסטורג
     updateWishlistIcon();
-    updatecartIcon();
+    updateCartIcon();
 }
 
 // בניית כרטיסיית מוצר 
@@ -98,6 +98,7 @@ function productCreator(product){
     const catalogProductBox = document.createElement('div');
     catalogProductBox.classList.add('catalog_product_box');
     catalogProductBox.id = product.id;
+    catalogProductBox.setAttribute("data-stock", product.stock || 1);
 
     // יצירת תיבת התמונה
     const productImgBox = document.createElement('div');
@@ -223,6 +224,12 @@ function productCreator(product){
 
 }
 
+// רענון המוצרים בווישליסט בעת רענון או טעינת הדף 
+document.addEventListener('DOMContentLoaded', () => {
+    getItemsFromWishlist();
+    getItemsFromCart();
+});
+
 // שמירת הנתונים של המוצר בלוקאלסטורג' למועדפים + צביעה של אייקון לב באדום
 function saveToWishlist(event){
     const heartIconClick = event.currentTarget;
@@ -245,10 +252,11 @@ function saveToWishlist(event){
     const originalPrice = productBox.querySelector('.original_price')?.textContent.trim();
     const discount = productBox.querySelector('.discount')?.textContent.trim();
     const finalPrice = productBox.querySelector('.cost')?.textContent.trim();
+    const stock = parseInt(productBox.dataset.stock) || 1;
     const buyLink = productBox.querySelector('.buy')?.href;
 
     // מבנה נתונים לשמירה
-    const productData = {
+    const wishlistProductData = {
         id: productId,
         name: name,
         description: description,
@@ -257,6 +265,7 @@ function saveToWishlist(event){
         originalPrice: originalPrice,
         discount: discount,
         finalPrice: finalPrice,
+        stock: stock,
         buyLink: buyLink
     };
 
@@ -267,7 +276,7 @@ function saveToWishlist(event){
 
     if(heartIconClick.classList.contains('heart_icon_click')){
         if(existingIndex === -1){
-            wishlist.push(productData);
+            wishlist.push(wishlistProductData);
         }
     }
     else{
@@ -293,13 +302,8 @@ function updateWishlistIcon() {
     });
 }
 
-// רענון המוצרים בווישליסט בעת רענון או טעינת הדף 
-document.addEventListener('DOMContentLoaded', () => {
-    getItemsFromLocalstorage();
-});
-
 // טעינת מוצרים מלוקלסטורג + זימון פונקציית בניה של כרטיס מועדפים
-function getItemsFromLocalstorage() {
+function getItemsFromWishlist() {
     const getWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     const container = document.querySelector('#wishlist_ul');
     if(!container){
@@ -318,21 +322,19 @@ function getItemsFromLocalstorage() {
     });
 
     // קריאה לפונקציה שמזינה אירוע עבור מחיקת מוצר
-    deletEvents();
+    wishlistDeleteEvents();
 
-    const qtyInWishlist = document.querySelectorAll('.qty_in_wishlist');
-    qtyInWishlist.forEach(item => {
-        if(qtyInWishlist){
-            item.textContent = 'Total: ' + getWishlist.length + ' items in your Wishlist';
-        }
-    });
+    const qtyInWishlist = document.querySelector('.qty_in_wishlist');
+    if(qtyInWishlist){
+        qtyInWishlist.textContent = 'Total: ' + getWishlist.length + ' items in your Wishlist';
+    }
 }
 
 // בניית כרטיס מועדפים 
-function wishlistCreator(productData){
+function wishlistCreator(wishlistProductData){
     // יצירת אלמנט ליסט
     const wishlistItem = document.createElement('li');
-    wishlistItem.setAttribute('data-id', productData.id)
+    wishlistItem.setAttribute('data-id', wishlistProductData.id)
 
     // תיבת מוצר מועדפים
     const wishlistBox = document.createElement('div');
@@ -343,7 +345,7 @@ function wishlistCreator(productData){
     imgBox .classList.add('wishlist_img');
 
     const img = document.createElement('img');
-    img.src = productData.image;
+    img.src = wishlistProductData.image;
     img.alt = '';
 
     imgBox.appendChild(img);
@@ -360,17 +362,17 @@ function wishlistCreator(productData){
     originalPriceBox.classList.add('wishlist_original_price_box');
 
     const originalPrice = document.createElement('h4');
-    originalPrice.textContent = productData.originalPrice;
+    originalPrice.textContent = wishlistProductData.originalPrice;
 
     const discount = document.createElement('p');
-    discount.textContent = productData.discount;
+    discount.textContent = wishlistProductData.discount;
 
     originalPriceBox.appendChild(originalPrice);
     originalPriceBox.appendChild(discount);
 
     const finalPrice = document.createElement('h2');
     finalPrice.classList.add('wishlist_cost');
-    finalPrice.textContent = productData.finalPrice;
+    finalPrice.textContent = wishlistProductData.finalPrice;
 
     priceBox.appendChild(originalPriceBox);
     priceBox.appendChild(finalPrice);
@@ -381,8 +383,8 @@ function wishlistCreator(productData){
 
     const nameH3 = document.createElement('h3');
     const nameLink = document.createElement('a');
-    nameLink.href = productData.buyLink;
-    nameLink.textContent = productData.name;
+    nameLink.href = wishlistProductData.buyLink;
+    nameLink.textContent = wishlistProductData.name;
 
     nameH3.appendChild(nameLink);
     nameBox.appendChild(nameH3);
@@ -392,7 +394,7 @@ function wishlistCreator(productData){
     descTextBox.classList.add('wishlist_product_description');
 
     const descP = document.createElement('p');
-    descP.textContent = productData.description;
+    descP.textContent = wishlistProductData.description;
     descTextBox.appendChild(descP);
 
     // כפתור דחיפה לעגלה
@@ -424,8 +426,8 @@ function wishlistCreator(productData){
     document.querySelector('#wishlist_ul').appendChild(wishlistItem);
 };
 
-// בניית פונקציה שמזינה אירוע לכל הפריטים למחיקת המוצר
-function deletEvents(){
+// בניית פונקציה שמזינה אירוע לכל הפריטים למחיקת המוצר בווישליסט
+function wishlistDeleteEvents(){
     const deleteButtons = document.querySelectorAll('.delete_product');
     deleteButtons.forEach(button => {
         button.addEventListener('click', removeFromWishlist)
@@ -449,12 +451,10 @@ function removeFromWishlist(event){
     wishlist = wishlist.filter(item => item.id !== productId);
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
 
-    const qtyInWishlist = document.querySelectorAll('.qty_in_wishlist');
-    qtyInWishlist.forEach(item => {
-        if(qtyInWishlist){
-            item.textContent = 'Total: ' + wishlist.length + ' items in your Wishlist';
-        }
-    });
+    const qtyInWishlist = document.querySelector('.qty_in_wishlist');
+    if(qtyInWishlist){
+        qtyInWishlist.textContent = 'Total: ' + wishlist.length + ' items in your Wishlist';
+    }
 }
 
 // שמירת הנתונים של המוצר בלוקאלסטורג' לעגלה + צביעה של אייקון עגלה באדום
@@ -479,10 +479,11 @@ function saveToCart(event){
     const originalPrice = productBox.querySelector('.original_price')?.textContent.trim();
     const discount = productBox.querySelector('.discount')?.textContent.trim();
     const finalPrice = productBox.querySelector('.cost')?.textContent.trim();
+    const stock = parseInt(productBox.dataset.stock) || 1;
     const buyLink = productBox.querySelector('.buy')?.href;
 
     // מבנה נתונים לשמירה
-    const productData = {
+    const cartProductData = {
         id: productId,
         name: name,
         description: description,
@@ -491,6 +492,7 @@ function saveToCart(event){
         originalPrice: originalPrice,
         discount: discount,
         finalPrice: finalPrice,
+        stock: stock,
         buyLink: buyLink
     };
 
@@ -501,7 +503,7 @@ function saveToCart(event){
 
     if(cartIconClick.classList.contains('cart_icon_click')){
         if(existingIndex === -1){
-            cart.push(productData);
+            cart.push(cartProductData);
         }
     }
 
@@ -515,24 +517,53 @@ function saveToCart(event){
 }
 
 // עדכון צבע אייקון עגלה בהתאם ללוקאלסטורג לאחר רענון
-function updatecartIcon() {
+function updateCartIcon() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.forEach(savedItem => {
         const productBox = document.getElementById(savedItem.id);
         if(productBox) {
             const cart = productBox.querySelector('.cart_icon');
-            if(heart){
-                heart.classList.add('cart_icon_click');
+            if(cart){
+                cart.classList.add('cart_icon_click');
             }
         }
     });
 }
 
+// טעינת מוצרים מלוקלסטורג + זימון פונקציית בניה של כרטיס עגלה
+function getItemsFromCart() {
+    const getCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const container = document.querySelector('#cart_ul');
+    if(!container){
+        console.warn('container is not found')
+        return;
+    }
+
+    container.innerHTML = '';
+
+    if (getCart.length === 0){
+        return;
+    }
+
+    getCart.forEach(product => {
+        cartCreator(product);
+    });
+
+    // קריאה לפונקציה שמזינה אירוע עבור מחיקת מוצר
+    cartDeleteEvents();
+
+    const qtyInCart = document.querySelector('.qty_in_cart');
+    if(qtyInCart){
+        qtyInCart.textContent = 'Total: ' + getCart.length + ' items in your cart';
+    }
+}
+
 // בניית כרטיס עגלה 
-function cartCreator(event){
+function cartCreator(cartProductData){
 
     // יצירת אלמנט עגלה
     const cartItem = document.createElement('li');
+    cartItem.setAttribute('data-id', cartProductData.id);
 
     // תיבת מוצר עגלה 
     const cartBox = document.createElement('div');
@@ -543,7 +574,7 @@ function cartCreator(event){
     imgBox.classList.add('cart_img');
 
     const img = document.createElement('img');
-    img.src = product.image;
+    img.src = cartProductData.image;
 
     imgBox.appendChild(img);
 
@@ -559,17 +590,17 @@ function cartCreator(event){
     originalPriceBox.classList.add('cart_original_price_box');
 
     const originalPrice = document.createElement('h4');
-    originalPrice.textContent = product.originalPrice;
+    originalPrice.textContent = cartProductData.originalPrice;
 
     const discount = document.createElement('p');
-    discount.textContent = product.discount;
+    discount.textContent = cartProductData.discount;
 
     originalPriceBox.appendChild(originalPrice);
     originalPriceBox.appendChild(discount);
 
     const finalPrice = document.createElement('h2');
     finalPrice.classList.add('cart_cost');
-    finalPrice.textContent = product.finalPrice;
+    finalPrice.textContent = cartProductData.finalPrice;
 
     priceBox.appendChild(originalPriceBox);
     priceBox.appendChild(finalPrice);
@@ -580,8 +611,8 @@ function cartCreator(event){
 
     const nameH3 = document.createElement('h3');
     const nameLink = document.createElement('a');
-    nameLink.href = product.buyLink || '#';
-    nameLink.textContent = product.name;
+    nameLink.href = cartProductData.buyLink || '#';
+    nameLink.textContent = cartProductData.name;
 
     nameH3.appendChild(nameLink);
     nameBox.appendChild(nameH3);
@@ -596,7 +627,7 @@ function cartCreator(event){
 
     const qtyInput = document.createElement('input');
     qtyInput.type = 'number';
-    qtyInput.value = product.quantity || 1;
+    qtyInput.value = cartProductData.quantity || 1;
     qtyInput.min = 1;
 
     qtyBox.appendChild(qtyLabel);
@@ -627,5 +658,35 @@ function cartCreator(event){
     cartItem.appendChild(cartBox);
 
     // הכנסת כרטיס מועדפים לדום
+    document.querySelector('#cart_ul').appendChild(cartItem);
+}
 
+// בניית פונקציה שמזינה אירוע לכל הפריטים למחיקת המוצר בעגלה
+function cartDeleteEvents(){
+    const deleteButtons = document.querySelectorAll('.delete_product');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', removeFromCart)
+    });
+}
+// פונקציה למחיקת פריט עגלה מהדום ומהזיכרון
+function removeFromCart(event){
+    // מחיקת פריט מהדום
+    const deleteBtn = event.currentTarget;
+    const listItem = deleteBtn.closest('li');
+    if(!listItem){
+        return;
+    }
+    listItem.remove();
+
+    const productId = listItem.getAttribute('data-id');
+    
+    // מחיקה פריט מהזיכרון
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.filter(item => item.id !== productId);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    const qtyInCart = document.querySelector('.qty_in_cart');
+    if(qtyInCart){
+        qtyInCart.textContent = 'Total: ' + cart.length + ' items in your cart';
+    }
 }

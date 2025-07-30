@@ -9,6 +9,7 @@
     "originalPrice": "2,649.99 $",
     "discount": "-10%",
     "finalPrice": "2,119.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -21,6 +22,7 @@
     "originalPrice": "249.99 $",
     "discount": "-10%",
     "finalPrice": "189.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -33,6 +35,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "949.00 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -45,6 +48,7 @@
     "originalPrice": "309.99 $",
     "discount": "-10%",
     "finalPrice": "249.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -57,6 +61,7 @@
     "originalPrice": "599.99 $",
     "discount": "-10%",
     "finalPrice": "499.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -69,6 +74,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "449.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -81,6 +87,7 @@
     "originalPrice": "599.99 $",
     "discount": "-20%",
     "finalPrice": "479.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -93,6 +100,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "1,419.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -105,6 +113,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "1,799.00 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -117,6 +126,7 @@
     "originalPrice": "2,099.00",
     "discount": "-19%",
     "finalPrice": "1,699.00 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -129,6 +139,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "4,649.00 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -141,6 +152,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "3,699.00 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -153,6 +165,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "216.95 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -165,6 +178,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "164.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -177,6 +191,7 @@
     "originalPrice": "99.00 $",
     "discount": "-60%",
     "finalPrice": "39.60 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -189,6 +204,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "269.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -201,6 +217,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "129.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -213,6 +230,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "62.90 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -225,6 +243,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "129.00 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -237,6 +256,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "119.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -249,6 +269,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "149.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -261,6 +282,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "495.00 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -273,6 +295,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "649.00 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -285,6 +308,7 @@
     "originalPrice": "99.99 $",
     "discount": "-20%",
     "finalPrice": "79.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -297,6 +321,7 @@
     "originalPrice": "169.99 $",
     "discount": "-18%%",
     "finalPrice": "139.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -309,6 +334,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "699.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 },
 {
@@ -321,6 +347,7 @@
     "originalPrice": "",
     "discount": "",
     "finalPrice": "99.99 $",
+    "stock": "1",
     "link": "../product page/Product Page.html"
 }
 ]
