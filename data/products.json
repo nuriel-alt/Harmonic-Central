@@ -10,7 +10,7 @@
     "discount": "-10%",
     "finalPrice": "2,119.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability.png", "../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability 1.png", "../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability 2.png", "../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability 3.png", "../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability 4.png"]
 },
 {
     "category": "guitars",
@@ -23,7 +23,7 @@
     "discount": "-10%",
     "finalPrice": "189.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "guitars",
@@ -36,7 +36,7 @@
     "discount": "",
     "finalPrice": "949.00 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "guitars",
@@ -49,7 +49,7 @@
     "discount": "-10%",
     "finalPrice": "249.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "guitars",
@@ -62,7 +62,7 @@
     "discount": "-10%",
     "finalPrice": "499.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "guitars",
@@ -75,7 +75,7 @@
     "discount": "",
     "finalPrice": "449.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "guitars",
@@ -88,7 +88,7 @@
     "discount": "-20%",
     "finalPrice": "479.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "guitars",
@@ -101,7 +101,7 @@
     "discount": "",
     "finalPrice": "1,419.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "guitars",
@@ -114,7 +114,7 @@
     "discount": "",
     "finalPrice": "1,799.00 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "guitars",
@@ -127,7 +127,7 @@
     "discount": "-19%",
     "finalPrice": "1,699.00 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "guitars",
@@ -140,7 +140,7 @@
     "discount": "",
     "finalPrice": "4,649.00 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "guitars",
@@ -153,7 +153,7 @@
     "discount": "",
     "finalPrice": "3,699.00 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -166,7 +166,7 @@
     "discount": "",
     "finalPrice": "216.95 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -179,7 +179,7 @@
     "discount": "",
     "finalPrice": "164.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -192,7 +192,7 @@
     "discount": "-60%",
     "finalPrice": "39.60 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -205,7 +205,7 @@
     "discount": "",
     "finalPrice": "269.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -218,7 +218,7 @@
     "discount": "",
     "finalPrice": "129.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -231,7 +231,7 @@
     "discount": "",
     "finalPrice": "62.90 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -244,7 +244,7 @@
     "discount": "",
     "finalPrice": "129.00 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -257,7 +257,7 @@
     "discount": "",
     "finalPrice": "119.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -270,7 +270,7 @@
     "discount": "",
     "finalPrice": "149.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -283,7 +283,7 @@
     "discount": "",
     "finalPrice": "495.00 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -296,7 +296,7 @@
     "discount": "",
     "finalPrice": "649.00 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -309,7 +309,7 @@
     "discount": "-20%",
     "finalPrice": "79.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -322,7 +322,7 @@
     "discount": "-18%%",
     "finalPrice": "139.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -335,7 +335,7 @@
     "discount": "",
     "finalPrice": "699.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 },
 {
     "category": "accessories",
@@ -348,6 +348,6 @@
     "discount": "",
     "finalPrice": "99.99 $",
     "stock": "1",
-    "link": "../product page/Product Page.html"
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
 }
 ]

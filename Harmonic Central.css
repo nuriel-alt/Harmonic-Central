@@ -426,8 +426,7 @@ nav {
     width: calc(25% - 40px);
     border-radius: 10px;
     background-color: white;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -2508,7 +2507,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 150px;
+    width: 157px;
 }
 
 .payment {
@@ -2789,7 +2788,7 @@ footer {
         width: 100px;
     }
 
-    .cart_Sub_total {
+    .priceDisplaytal {
         width: 120px;
         font-size: 12px;
     }
@@ -2864,7 +2863,7 @@ footer {
         width: 100px;
     }
 
-    .cart_Sub_total {
+    .priceDisplaytal {
         width: 140px;
         font-size: 14px;
     }
@@ -2939,7 +2938,7 @@ footer {
         width: 100px;
     }
 
-    .cart_Sub_total {
+    .priceDisplaytal {
         width: 150px;
         font-size: 16px;
     }
@@ -3168,7 +3167,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 150px;
+    width: 157px;
 }
 
 /*phone*/
