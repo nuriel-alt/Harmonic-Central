@@ -62,20 +62,42 @@ function changeSideCatalogFunction(event) {
 fetch('../data/products.json')
     .then(response => response.json())
     .then(products => {
-            // בדיקת כתובת אתר וקריאה לפונקצית בניית דף מוצר
-            if(window.location.href.includes('Product%20Page.html')){
-                const urlId = window.location.href.split('=')[2].split('&')[0];
-                const product = products.find(productId => productId.id === urlId);
-                if(product){
-                    pdpCreator(product);
-                }
-                else{
-                    console.warn('id is not found', urlId);
-                }
+        // ספירת מלאי  מוצרים כולל
+        let totalItemsInShop = 0;
+        const productQty = products.forEach(product => {
+            totalItemsInShop++;
+        });
+        const totalInStock = document.querySelector('.total_in_stock')
+        if(totalInStock){
+            totalInStock.textContent = `Discover ${totalItemsInShop} Guitar Products Curated For You`;
+        }
+
+        // הכנסה של 4 מוצרים הכי נמכרים
+        const topSales = products
+            .sort((a, b) => b.topSale - a.topSale)
+            .slice(0, 4);
+
+        // בניית כרטיס מוצר פופולארי
+        topSales.forEach(product => {
+            productCreator(product);
+        })
+
+        // בדיקת כתובת אתר וקריאה לפונקצית בניית דף מוצר
+        if(window.location.href.includes('Product%20Page.html')){
+            const urlId = window.location.href.split('=')[2].split('&')[0];
+            const product = products.find(productId => productId.id === urlId);
+            if(product){
+                pdpCreator(product);
             }
-            // במידה וזה לא דף מוצר - יצירת קטלוג
+
             else{
-                products.forEach(product => {
+                console.warn('id is not found', urlId);
+            }
+        }
+
+        // במידה וזה לא דף מוצר - יצירת קטלוג
+        else{
+            products.forEach(product => {
                 creator(product);
             });
         }
@@ -85,14 +107,9 @@ fetch('../data/products.json')
 // פונקציה ראשית המפעילה את כל הפונקציות לאחר קבלת נתונים מהשרת
 function creator(product){
     const currentPath = window.location.pathname;
-
-    // דף הבית
-    if(currentPath.includes('index.html')){
-        productCreator(product);
-    }
     
     // דף קטלוג
-    else if(currentPath.includes('catalog')){
+    if(currentPath.includes('catalog')){
         catalogProductCreator(product);
     }
 
@@ -352,18 +369,18 @@ function catalogProductCreator(product){
     catalogProductBox.appendChild(info);
 
     // הכנסת כרטיס מוצר לדום
-    if (product.category == 'guitars') {
-        const container = document.querySelector('#guitar_catalog');
-        if (container){
-            container.appendChild(catalogProductBox);
-        }           
-    }
+    if (window.location.href.includes('catalog.html')) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlCategory = urlParams.get('category');
 
-    if (product.category == 'accessories') {
-        const container = document.querySelector('#accessories_catalog');
-        if (container){
-            container.appendChild(catalogProductBox);
-        }    
+        if(product.category == urlCategory){
+            document.querySelector('.sort_filter h1').textContent = urlCategory + ' catalog';
+            const container = document.querySelector('#catalog');
+            if (container){
+                container.appendChild(catalogProductBox);
+            }        
+        }
+       
     }
 }
 

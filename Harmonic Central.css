@@ -243,6 +243,13 @@ header {
     align-items: center;
 }
 
+.total_in_stock {
+    width: 200px;
+    color: white;
+    margin-left: 20px;
+    padding-bottom: 10px;
+}
+
 .search {
     width: 250px;
     height: 25px;

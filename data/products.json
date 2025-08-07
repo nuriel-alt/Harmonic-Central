@@ -10,7 +10,8 @@
     "discount": "-10%",
     "finalPrice": "2,119.99 $",
     "stock": "1",
-    "images": ["../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability.png", "../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability 1.png", "../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability 2.png", "../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability 3.png", "../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability 4.png"]
+    "images": ["../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability.png", "../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability 1.png", "../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability 2.png", "../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability 3.png", "../images/products/guitars/Electric Guitars/Fender/Fender American Ultra Luxe Telecaster – Luxury and Unmatched Playability 4.png"],
+    "topSale": 2
 },
 {
     "category": "guitars",
@@ -23,7 +24,8 @@
     "discount": "-10%",
     "finalPrice": "189.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/guitars/Electric Guitars/Ibanez/Ibanez GRGR120EX Electric Guitar - White.jpg", "../images/products/guitars/Electric Guitars/Ibanez/Ibanez GRGR120EX Electric Guitar - White 1.png", "../images/products/guitars/Electric Guitars/Ibanez/Ibanez GRGR120EX Electric Guitar - White 2.png", "../images/products/guitars/Electric Guitars/Ibanez/Ibanez GRGR120EX Electric Guitar - White 3.jpg", "../images/products/guitars/Electric Guitars/Ibanez/Ibanez GRGR120EX Electric Guitar - White 4.jpg"],
+    "topSale": 2
 },
 {
     "category": "guitars",
@@ -36,7 +38,8 @@
     "discount": "",
     "finalPrice": "949.00 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/guitars/Acoustic Guitars/PRS/PRS SE A50E Acoustic-Electric Guitar Fire Red Burst.png", "../images/products/guitars/Acoustic Guitars/PRS/PRS SE A50E Acoustic-Electric Guitar Fire Red Burst 1.jpg", "../images/products/guitars/Acoustic Guitars/PRS/PRS SE A50E Acoustic-Electric Guitar Fire Red Burst 2.jpg", "../images/products/guitars/Acoustic Guitars/PRS/PRS SE A50E Acoustic-Electric Guitar Fire Red Burst 3.jpg", "../images/products/guitars/Acoustic Guitars/PRS/PRS SE A50E Acoustic-Electric Guitar Fire Red Burst 4.jpg"],
+    "topSale": 1
 },
 {
     "category": "guitars",
@@ -49,7 +52,8 @@
     "discount": "-10%",
     "finalPrice": "249.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/guitars/Electric Guitars/Jackson/L72527000001000-00-600x600.jpg", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 2
 },
 {
     "category": "guitars",
@@ -62,7 +66,8 @@
     "discount": "-10%",
     "finalPrice": "499.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/guitars/Electric Guitars/Sterling/Sterling by Music Man John Petrucci JP70 7-String Electric Guitar - Stealth Black.jpg", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 2
 },
 {
     "category": "guitars",
@@ -75,7 +80,8 @@
     "discount": "",
     "finalPrice": "449.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/guitars/Acoustic Guitars/Fender/Fender Newporter Player Limited-Edition Acoustic-Electric Guitar Ocean Teal.png", "../images/products/guitars/Acoustic Guitars/Fender/Fender Newporter Player Limited-Edition Acoustic-Electric Guitar Ocean Teal 1.jpg", "../images/products/guitars/Acoustic Guitars/Fender/Fender Newporter Player Limited-Edition Acoustic-Electric Guitar Ocean Teal 2.jpg", "../images/products/guitars/Acoustic Guitars/Fender/Fender Newporter Player Limited-Edition Acoustic-Electric Guitar Ocean Teal 3.jpg", "../images/products/guitars/Acoustic Guitars/Fender/Fender Newporter Player Limited-Edition Acoustic-Electric Guitar Ocean Teal 4.jpg"],
+    "topSale": 1
 },
 {
     "category": "guitars",
@@ -88,7 +94,8 @@
     "discount": "-20%",
     "finalPrice": "479.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/guitars/Electric Guitars/Gretsch/Gretsch_Guitars_Streamliner_Limited-Edition_Center_Block_Jr._Double-Cut_Electric_Guitar_With_Bigsby_Mint_Metallic-removebg-preview.png", "../images/products/guitars/Electric Guitars/Gretsch/Gretsch_Guitars_Streamliner_Limited-Edition_Center_Block_Jr._Double-Cut_Electric_Guitar_With_Bigsby_Mint_Metallic 1.jpg", "../images/products/guitars/Electric Guitars/Gretsch/Gretsch_Guitars_Streamliner_Limited-Edition_Center_Block_Jr._Double-Cut_Electric_Guitar_With_Bigsby_Mint_Metallic 2.jpg", "../images/products/guitars/Electric Guitars/Gretsch/Gretsch_Guitars_Streamliner_Limited-Edition_Center_Block_Jr._Double-Cut_Electric_Guitar_With_Bigsby_Mint_Metallic 3.jpg", "../images/products/guitars/Electric Guitars/Gretsch/Gretsch_Guitars_Streamliner_Limited-Edition_Center_Block_Jr._Double-Cut_Electric_Guitar_With_Bigsby_Mint_Metallic 4.jpg"],
+    "topSale": 1
 },
 {
     "category": "guitars",
@@ -101,7 +108,8 @@
     "discount": "",
     "finalPrice": "1,419.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/guitars/Electric Guitars/EVH/EVH_Striped_Series_Electric_Guitar_Red_with_Black_Stripes-removebg-preview.png", "../images/products/guitars/Electric Guitars/EVH/EVH_Striped_Series_Electric_Guitar_Red_with_Black_Stripes-removebg-preview 1.jpg", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "guitars",
@@ -114,7 +122,8 @@
     "discount": "",
     "finalPrice": "1,799.00 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/guitars/Electric Guitars/Schecter/Schecter Guitar Research E-1 FR-S Electro-Resin Electric Guitar Gloss Natural.png", "../images/products/guitars/Electric Guitars/Schecter/Schecter Guitar Research E-1 FR-S Electro-Resin Electric Guitar Gloss Natural 1.jpg", "../images/products/guitars/Electric Guitars/Schecter/Schecter Guitar Research E-1 FR-S Electro-Resin Electric Guitar Gloss Natural 2.jpg", "../images/products/guitars/Electric Guitars/Schecter/Schecter Guitar Research E-1 FR-S Electro-Resin Electric Guitar Gloss Natural 3.jpg", "../images/products/guitars/Electric Guitars/Schecter/Schecter Guitar Research E-1 FR-S Electro-Resin Electric Guitar Gloss Natural 4.jpg"],
+    "topSale": 1
 },
 {
     "category": "guitars",
@@ -127,7 +136,8 @@
     "discount": "-19%",
     "finalPrice": "1,699.00 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/guitars/Electric Guitars/esp/ESP_E-II_Horizon-III_Flame_Maple_Electric_Guitar_Reindeer_Blue-removebg-preview.png", "../images/products/guitars/Electric Guitars/esp/ESP_E-II_Horizon-III_Flame_Maple_Electric_Guitar_Reindeer_Blue 1.jpg", "../images/products/guitars/Electric Guitars/esp/ESP_E-II_Horizon-III_Flame_Maple_Electric_Guitar_Reindeer_Blue 2.jpg", "../images/products/guitars/Electric Guitars/esp/ESP_E-II_Horizon-III_Flame_Maple_Electric_Guitar_Reindeer_Blue 3.jpg", "../images/products/guitars/Electric Guitars/esp/ESP_E-II_Horizon-III_Flame_Maple_Electric_Guitar_Reindeer_Blue 4.jpg"],
+    "topSale": 1
 },
 {
     "category": "guitars",
@@ -140,7 +150,8 @@
     "discount": "",
     "finalPrice": "4,649.00 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/guitars/Acoustic Guitars/gibson/Gibson_Hummingbird_Original_Red_Spruce_Limited-Edition_Acoustic-Electric_Guitar_Heritage_Cherry_Sunburst-removebg-preview.png", "../images/products/guitars/Acoustic Guitars/gibson/Gibson_Hummingbird_Original_Red_Spruce_Limited-Edition_Acoustic-Electric_Guitar_Heritage_Cherry_Sunburst 1.jpg", "../images/products/guitars/Acoustic Guitars/gibson/Gibson_Hummingbird_Original_Red_Spruce_Limited-Edition_Acoustic-Electric_Guitar_Heritage_Cherry_Sunburst 2.jpg", "../images/products/guitars/Acoustic Guitars/gibson/Gibson_Hummingbird_Original_Red_Spruce_Limited-Edition_Acoustic-Electric_Guitar_Heritage_Cherry_Sunburst 3.jpg", "../images/products/guitars/Acoustic Guitars/gibson/Gibson_Hummingbird_Original_Red_Spruce_Limited-Edition_Acoustic-Electric_Guitar_Heritage_Cherry_Sunburst 4.jpg"],
+    "topSale": 1
 },
 {
     "category": "guitars",
@@ -153,7 +164,8 @@
     "discount": "",
     "finalPrice": "3,699.00 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/guitars/Acoustic Guitars/taylor/Taylor 714ce Sunset Blvd Grand Auditorium Acoustic-Electric Guitar Sunset Edgeburst-removebg-preview.png", "../images/products/guitars/Acoustic Guitars/taylor/Taylor 714ce Sunset Blvd Grand Auditorium Acoustic-Electric Guitar Sunset Edgeburst 1.jpg", "../images/products/guitars/Acoustic Guitars/taylor/Taylor 714ce Sunset Blvd Grand Auditorium Acoustic-Electric Guitar Sunset Edgeburst 2.jpg", "../images/products/guitars/Acoustic Guitars/taylor/Taylor 714ce Sunset Blvd Grand Auditorium Acoustic-Electric Guitar Sunset Edgeburst 3.jpg", "../images/products/guitars/Acoustic Guitars/taylor/Taylor 714ce Sunset Blvd Grand Auditorium Acoustic-Electric Guitar Sunset Edgeburst 4.jpg"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -166,7 +178,8 @@
     "discount": "",
     "finalPrice": "216.95 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -179,7 +192,8 @@
     "discount": "",
     "finalPrice": "164.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -192,7 +206,8 @@
     "discount": "-60%",
     "finalPrice": "39.60 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -205,7 +220,8 @@
     "discount": "",
     "finalPrice": "269.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -218,7 +234,8 @@
     "discount": "",
     "finalPrice": "129.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -231,7 +248,8 @@
     "discount": "",
     "finalPrice": "62.90 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -244,7 +262,8 @@
     "discount": "",
     "finalPrice": "129.00 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -257,7 +276,8 @@
     "discount": "",
     "finalPrice": "119.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -270,7 +290,8 @@
     "discount": "",
     "finalPrice": "149.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -283,7 +304,8 @@
     "discount": "",
     "finalPrice": "495.00 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -296,7 +318,8 @@
     "discount": "",
     "finalPrice": "649.00 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -309,7 +332,8 @@
     "discount": "-20%",
     "finalPrice": "79.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -322,7 +346,8 @@
     "discount": "-18%%",
     "finalPrice": "139.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -335,7 +360,8 @@
     "discount": "",
     "finalPrice": "699.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 },
 {
     "category": "accessories",
@@ -348,6 +374,7 @@
     "discount": "",
     "finalPrice": "99.99 $",
     "stock": "1",
-    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"]
+    "images": ["../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG", "../images/products/coming soon.PNG"],
+    "topSale": 1
 }
 ]
