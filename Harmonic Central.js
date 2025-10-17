@@ -1,3 +1,63 @@
+// קרוסלה לדף הבית
+const nextBtn = document.querySelector('.next'),
+    prevBtn = document.querySelector('.prev'),
+    carousel = document.querySelector('.carousel'),
+    list = carousel.querySelector('.list'),
+    item = carousel.querySelectorAll('.item'),
+    runningTime = carousel.querySelector('.time_running');
+
+let timeRunning = 3000;
+let timeAutoNext = 7000;
+
+nextBtn.addEventListener('click', () => {
+    showSlider('next');
+});
+
+prevBtn.addEventListener('click', () => {
+    showSlider('prev');
+});
+
+let runTimeOut;
+
+let runNextAuto = setTimeout(() => {
+    nextBtn.click(); 
+}, timeAutoNext);
+
+function resetTimeAnimation() {
+    runningTime.style.animation = 'none';
+    runningTime.offsetHeight; // trigger reflow
+    runningTime.style.animation = null;
+    runningTime.style.animation = 'runningTime 7s linear 1 forwards';
+}
+
+function showSlider(type) {
+    let sliderItemsDom = list.querySelectorAll('.carousel .list .item');
+    if (type === 'next') {
+        list.appendChild(sliderItemsDom[0]);
+        carousel.classList.add('next');
+    } else if (type === 'prev') {
+        list.prepend(sliderItemsDom[sliderItemsDom.length - 1]);
+        carousel.classList.add('prev');
+    }
+
+    clearTimeout(runTimeOut);
+
+    runTimeOut = setTimeout(() => {
+        carousel.classList.remove('next');
+        carousel.classList.remove('prev');
+    }, timeRunning);
+
+    clearTimeout(runNextAuto);
+    runNextAuto = setTimeout(() => {
+        nextBtn.click();
+    }, timeAutoNext);
+
+    resetTimeAnimation(); // איפוס אנימציית פס ריצה
+}
+
+// הפעלת אנימציה של פס הזמן 
+resetTimeAnimation();
+
 // פתיחת תפריט ניווט ראשי 
 let openSideMenu = document.querySelector('.header_filter');
 openSideMenu.addEventListener('click', openSideMenuFunction);
@@ -768,7 +828,7 @@ function cartCreator(cartProductData){
     originalPriceBox.classList.add('cart_original_price_box');
 
     const originalPrice = document.createElement('h4');
-    originalPrice.textContent = formatPrice(parsePrice(cartProductData.originalPrice));
+    originalPrice.textContent = cartProductData.originalPrice;
 
     const discount = document.createElement('p');
     discount.textContent = cartProductData.discount || '';
@@ -912,7 +972,7 @@ function cartQty(event) {
     //  עדכון המחיר בכרטיס מוצר לפי כמות
     const finalPriceEl = cartProductBox.querySelector('.cart_cost');
     if (finalPriceEl) {
-        const pricePerItem = parseFloat(cart[index].finalPrice.replace('$', '').trim()) || 0;
+        const pricePerItem = parsePrice(cart[index].finalPrice);
         const totalPrice = pricePerItem * qtyValue;
         finalPriceEl.textContent = totalPrice.toFixed(2) + ' $';
     }
@@ -1009,4 +1069,6 @@ function pdpCreator(product){
     const description = document.querySelector('#pdp_description');
     description.textContent = product.description;
 }
+
+// חיפוש באתר 
 
