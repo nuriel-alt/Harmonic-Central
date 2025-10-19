@@ -1,29 +1,47 @@
 // קרוסלה לדף הבית
 const nextBtn = document.querySelector('.next'),
     prevBtn = document.querySelector('.prev'),
-    carousel = document.querySelector('.carousel'),
+    carousel = document.querySelector('.carousel');
+
+    let list = null,
+        item = null,
+        runningTime = null;
+
+if(carousel){
+
     list = carousel.querySelector('.list'),
     item = carousel.querySelectorAll('.item'),
     runningTime = carousel.querySelector('.time_running');
+}
 
 let timeRunning = 3000;
 let timeAutoNext = 7000;
 
-nextBtn.addEventListener('click', () => {
-    showSlider('next');
-});
+if(nextBtn){
+    nextBtn.addEventListener('click', () => {
+        showSlider('next');
+    });
+}
 
-prevBtn.addEventListener('click', () => {
-    showSlider('prev');
-});
+if(prevBtn){
+    prevBtn.addEventListener('click', () => {
+        showSlider('prev');
+    });
+}
+
 
 let runTimeOut;
+let runNextAuto = null;
 
-let runNextAuto = setTimeout(() => {
-    nextBtn.click(); 
-}, timeAutoNext);
+if(nextBtn) {
+    runNextAuto = setTimeout(() => {
+        if(nextBtn && typeof nextBtn.click === 'function') nextBtn.click(); 
+    }, timeAutoNext);
+}
+
 
 function resetTimeAnimation() {
+    if(!runningTime) return;
     runningTime.style.animation = 'none';
     runningTime.offsetHeight; // trigger reflow
     runningTime.style.animation = null;
@@ -31,7 +49,11 @@ function resetTimeAnimation() {
 }
 
 function showSlider(type) {
+    if(!list || !carousel) return;
+
     let sliderItemsDom = list.querySelectorAll('.carousel .list .item');
+    if(!sliderItemsDom || sliderItemsDom.length === 0) return;  
+
     if (type === 'next') {
         list.appendChild(sliderItemsDom[0]);
         carousel.classList.add('next');
@@ -43,13 +65,17 @@ function showSlider(type) {
     clearTimeout(runTimeOut);
 
     runTimeOut = setTimeout(() => {
+        if(carousel){
         carousel.classList.remove('next');
         carousel.classList.remove('prev');
+        }
     }, timeRunning);
 
-    clearTimeout(runNextAuto);
+    if(runNextAuto) clearTimeout(runNextAuto);
     runNextAuto = setTimeout(() => {
-        nextBtn.click();
+        if(nextBtn && typeof nextBtn.click === 'function'){
+            nextBtn.click();    
+        }
     }, timeAutoNext);
 
     resetTimeAnimation(); // איפוס אנימציית פס ריצה
@@ -161,6 +187,121 @@ fetch('../data/products.json')
                 creator(product);
             });
         }
+
+        // סינון מוצרים לפי חיפוש
+        const search = document.querySelector('#search');
+        search.addEventListener('input', function() {
+            // מחק תיבת הצעות קודמות אם קיימת 
+            const existingSuggestions = document.querySelector('.suggestions_box');
+            if (existingSuggestions) {
+                existingSuggestions.remove();
+            }
+
+            const searchTerm = search.value.toLowerCase();
+            let filteredProducts = []; // אתחול מערך למוצרים מסוננים
+
+            // טיפול בלחיצה על אנטר 
+            search.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); // למנוע את פעולת ברירת המחדל של הטופס
+                    if (filteredProducts.length > 0) {
+                        // שמירת תוצאות החיפוש בלוקאלסטורג
+                        localStorage.setItem('searchResults', JSON.stringify(filteredProducts));
+                        // מעבר לעמוד תוצאות החיפוש
+                        window.location.href = '../search results/search results.html';
+                    }
+                }
+            });
+
+            if (searchTerm.length >= 2) {
+                filteredProducts = products.filter(product => {
+                    return product.manufacturer.toLowerCase().includes(searchTerm) || 
+                        product.name.toLowerCase().includes(searchTerm) ||
+                        product.description.toLowerCase().includes(searchTerm);
+                });
+
+                // מחזיר את שמות המוצרים מתוך האובייקטים הנבחרים
+                const filteredProductsNames = filteredProducts.map(product => product.name); 
+                console.log('filteredProductsNames:', filteredProductsNames);
+
+                // יצירת תיבת הצעות
+                if (filteredProducts.length > 0) {
+                    const suggestionsBox = document.createElement('div');
+                    suggestionsBox.classList.add('suggestions_box');
+                    suggestionsBox.style.width = '100%';
+                    suggestionsBox.style.height = 'auto';
+                    suggestionsBox.style.maxHeight = '300px';
+                    suggestionsBox.style.backgroundColor = 'white';
+                    suggestionsBox.style.position = 'absolute';
+                    suggestionsBox.style.top = '90%';
+                    suggestionsBox.style.left = '0';
+                    suggestionsBox.style.zIndex = '997';
+                    suggestionsBox.style.border = '1px solid black';
+                    suggestionsBox.style.borderTop = '1px solid white';
+                    suggestionsBox.style.borderBottomLeftRadius = '8px';
+                    suggestionsBox.style.borderBottomRightRadius = '8px';
+                    suggestionsBox.style.overflowY = 'auto';
+                    suggestionsBox.style.opacity = '0'; // התחלה שקוף
+                    suggestionsBox.style.transform = 'translateY(-10px)'; // התחלה למעלה
+                    suggestionsBox.style.scrollbarWidth = 'thin';
+
+                    // אנימציה של הופעה 
+                    suggestionsBox.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+                    // הוספת מוצרים לתיבת ההצעות
+                    filteredProducts.forEach(product => { 
+                        const suggestion = document.createElement('div');
+                        suggestion.style.padding = '10px';
+                        suggestion.style.borderbottom = '1px solid #eee';
+                        suggestion.style.cursor = 'pointer';
+                        suggestion.style.display = 'flex';
+                        suggestion.style.alignItems = 'center';
+                        suggestion.style.justifyContent = 'space-between';
+
+                        // הוספת שם מוצר
+                        const textDiv = document.createElement('div');
+                        textDiv.textContent = product.name;
+                        textDiv.style.flex = '1';
+
+                        // הוספת תמונת מוצר 
+                        const previewImg = document.createElement('img');
+                        previewImg.src = product.img;
+                        previewImg.alt = product.name;
+                        previewImg.style.width = '40px';
+                        previewImg.style.height = '40px';
+                        previewImg.style.objectFit = 'cover';
+                        previewImg.style.marginLeft = '10px';
+                        previewImg.style.borderRadius = '4px';
+
+                        // הוספת אירוע לחיצה על הצעה
+                        suggestion.addEventListener('click', () => {
+                            const urlParams = new URLSearchParams();
+                            urlParams.append('category', product.category);
+                            urlParams.append('id', product.id);
+                            urlParams.append('name', product.name);
+                            window.location.href = `../product page/Product Page.html?${urlParams.toString()}`; 
+                        });
+
+                        suggestion.appendChild(textDiv);
+                        suggestion.appendChild(previewImg);
+                        suggestionsBox.appendChild(suggestion);
+                    });
+
+                    // הוספת תיבת ההצעות מתחת לשדה החיפוש
+                    const container = document.querySelector('.search_box');
+                    if (container){
+                        container.style.position = 'relative'; // וודא שהמכולה יחסית    
+                        container.appendChild(suggestionsBox);
+                        // הפעלת האנימציה לאחר הוספה לדום
+                        requestAnimationFrame(() => {
+                            suggestionsBox.style.opacity = '1'; // הופעה
+                            suggestionsBox.style.transform = 'translateY(0)'; // למקום הנכון
+                        });
+
+                    }
+                }
+            }    
+        });
     })
     .catch(error => console.error('error in json:', error));
 
@@ -1069,6 +1210,3 @@ function pdpCreator(product){
     const description = document.querySelector('#pdp_description');
     description.textContent = product.description;
 }
-
-// חיפוש באתר 
-

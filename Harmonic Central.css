@@ -87,6 +87,11 @@ header {
     height: 123px;
     position: relative;
     z-index: 200;
+    background-color: #333333;
+}
+
+.homepage_header {
+    background-color: transparent;
 }
 
 .menu_overlay {
@@ -501,6 +506,14 @@ header {
     margin-bottom: 5px;
     outline: none;
     border: none;
+}
+
+.search.search:-webkit-autofill,
+#myInput:-webkit-autofill:hover,
+#myInput:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: black !important;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 .search_label i {
