@@ -1,0 +1,12 @@
+[
+    { "username": "melody_mike", "email": "melody.mike@example.com", "password": "Guitar!2025" },
+    { "username": "rhythm_rita", "email": "rhythm.rita@example.com", "password": "Drum&Roll123" },
+    { "username": "bass_ben", "email": "bass.ben@example.com", "password": "DeepBass#9" },
+    { "username": "amp_amy", "email": "amp.amy@example.com", "password": "AmpUp2025!" },
+    { "username": "strum_sam", "email": "strum.sam@example.com", "password": "Strum*Forever1" },
+    { "username": "tone_tara", "email": "tone.tara@example.com", "password": "ToneTune#88" },
+    { "username": "fret_frank", "email": "fret.frank@example.com", "password": "FretBoard@7" },
+    { "username": "slide_sue", "email": "slide.sue@example.com", "password": "SlideIt!42" },
+    { "username": "pluck_paul", "email": "pluck.paul@example.com", "password": "Pluck&Play3" },
+    { "username": "choir_chris", "email": "choir.chris@example.com", "password": "ChoirChord$5" }
+] 

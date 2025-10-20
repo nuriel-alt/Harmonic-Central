@@ -144,6 +144,77 @@ function changeSideCatalogFunction(event) {
     }
 }
 
+// בדיקה אם כבר מחובר
+const loggedUsers = JSON.parse(localStorage.getItem('loggedInUsers')) || [];
+const loggedUser = loggedUsers.find(user => user.isLoggedIn);
+if(loggedUser && window.location.href.includes('Account%20Page.html')){
+    //אם כבר מחובר - מעבר לדף פרופיל
+    window.location.href = '../profile.html'; 
+}
+
+// התחברות משתמש
+const loginBtn = document.querySelector('#login_submit');
+if(loginBtn){
+    loginBtn.addEventListener('click', async () => {
+        const userName = document.querySelector('#logusername').value.trim();
+        const userPassword = document.querySelector('#logpassword').value.trim();
+
+        // בדיקה בסיסית של שדות ריקים   
+        if(!userName || !userPassword){
+            alert('Please fill in all fields.');
+            return
+        }
+
+        // שליחת בקשת התחברות לשרת
+        try {
+            // בקשת פאץ' לusers.json
+            const response = await fetch('../data/users.json');
+            const users = await response.json();
+
+            // בדיקת התאמה של שם משתמש וסיסמה
+            const user = users.find(user => user.username === userName && user.password === userPassword);
+
+            if(user){
+                let loggedUsers = JSON.parse(localStorage.getItem('loggedInUsers')) || [];
+                loggedUsers.push({
+                    name: user.name,
+                    email: user.email,
+                    isLoggedIn: true
+                });
+                localStorage.setItem('loggedInUsers', JSON.stringify(loggedUsers));
+                alert('Login successful! Welcome, ' + userName);
+                window.location.href = '../profile.html';
+
+            }
+            else{
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+
+        catch (error) {
+            console.error('Error during login:', error);
+            alert('could not connect to server. Please try again later.');
+        }
+    });
+
+}
+
+const signOutBtn = document.querySelector('#sign_out');
+if(signOutBtn){
+    signOutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let loggedUsers = JSON.parse(localStorage.getItem('loggedInUsers')) || [];
+
+        loggedUsers = loggedUsers.map(user => ({
+            ...user,
+            isLoggedIn: false
+        }));
+
+        localStorage.setItem('loggedInUsers', JSON.stringify(loggedUsers));
+        window.location.href = '/account/Account Page.html';
+    });
+}
+
 // הכנסת מוצרים מג'ייסון לקטלוג 
 fetch('../data/products.json')
     .then(response => response.json())
@@ -181,11 +252,15 @@ fetch('../data/products.json')
             }
         }
 
-        // במידה וזה לא דף מוצר - יצירת קטלוג
+        // במידה וזה לא דף מוצר - יצירת קטלוג עם סינון אינטראקטיבי
         else{
-            products.forEach(product => {
-                creator(product);
-            });
+            if(window.location.href.includes('catalog.html')){
+                initCatalogFiltering(products);
+            } else {
+                products.forEach(product => {
+                    creator(product);
+                });
+            }
         }
 
         // סינון מוצרים לפי חיפוש
@@ -204,11 +279,12 @@ fetch('../data/products.json')
             search.addEventListener('keypress', function(event) {
                 if (event.key === 'Enter') {
                     event.preventDefault(); // למנוע את פעולת ברירת המחדל של הטופס
+                    const searchTerm = search.value.toLowerCase();
                     if (filteredProducts.length > 0) {
                         // שמירת תוצאות החיפוש בלוקאלסטורג
                         localStorage.setItem('searchResults', JSON.stringify(filteredProducts));
                         // מעבר לעמוד תוצאות החיפוש
-                        window.location.href = '../search results/search results.html';
+                        window.location.href = `../catalog/catalog.html?search=${encodeURIComponent(searchTerm)}`;
                     }
                 }
             });
@@ -304,6 +380,8 @@ fetch('../data/products.json')
         });
     })
     .catch(error => console.error('error in json:', error));
+
+ 
 
 // פונקציה ראשית המפעילה את כל הפונקציות לאחר קבלת נתונים מהשרת
 function creator(product){
@@ -1210,3 +1288,379 @@ function pdpCreator(product){
     const description = document.querySelector('#pdp_description');
     description.textContent = product.description;
 }
+
+// החלפה בין רישום והתחברות משתמשים
+const switchToLog = document.querySelector('.sign_in_link');
+if(switchToLog){
+    switchToLog.addEventListener('click', () => {
+        document.querySelector('.cover_box').style.transform = 'translateX(25%)';
+    });
+}
+
+const switchToReg = document.querySelector('.sign_up_link');
+if(switchToReg){
+    switchToReg.addEventListener('click', () => {
+        document.querySelector('.cover_box').style.transform = 'translateX(-75%)';
+    });
+}
+
+/*
+// רישום משתמש חדש
+const registerBtn = document.querySelector('#register_submit');
+if(registerBtn){
+    registerBtn.addEventListener('click', registerUser);
+}
+function registerUser(){
+    const userName = document.querySelector('#regusername').value.trim();
+    const userEmail = document.querySelector('#regemail').value.trim();
+    const userPassword = document.querySelector('#regpassword').value.trim();
+    if(!userName || !userEmail || !userPassword){
+        alert('Please fill in all fields');
+        return;
+    }
+    if(userPassword.length < 8){
+        alert('Password must be at least 8 characters long');
+        return;
+    }
+    if(userPassword.search(/[0-9]/) == -1){
+        alert('Password must contain at least one number');
+        return;
+    }
+    if(userPassword.search(/[A-Z]/) == -1){
+        alert('Password must contain at least one uppercase letter');
+        return;
+    }
+    if(userPassword.search(/[a-z]/) == -1){
+        alert('Password must contain at least one lowercase letter');
+        return;
+    }
+    if(userPassword.search(/[@$!%*?&]/) == -1){
+        alert('Password must contain at least one special character (@, $, !, %, *, ?, &)');
+        return;
+    }
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    users.push({
+        name: userName,
+        email: userEmail,
+        password: userPassword
+    });
+    localStorage.setItem('users', JSON.stringify(users));
+    alert('Registration successful! You can now log in.');
+    window.location.href = '../profile.html';
+}
+
+// התחברות משתמש קיים
+const loginBtn = document.querySelector('#login_submit');
+if(loginBtn){
+    loginBtn.addEventListener('click', loginUser);
+    function loginUser(){
+        const userName = document.querySelector('#logusername').value.trim();
+        const userPassword = document.querySelector('#logpassword').value.trim();
+        if(!userName || !userPassword){
+            alert('Please fill in all fields');
+            return;
+        }
+
+        // בדיקה אם יש משתמשים רשומים
+        if(localStorage.getItem('users')){
+            let users = JSON.parse(localStorage.getItem('users'));
+            const user = users.find(user => {
+                return user.name === userName && user.password === userPassword;
+            });
+            if(user){
+                alert('Login successful!');
+                window.location.href = '../profile.html';
+            }
+            else{
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+        else{
+            alert('No registered user found. Please register first.');
+            return;
+        }
+    }
+}
+*/
+
+// התנתקות משתמש
+
+// בדיקת סטטוס התחברות משתמש
+
+
+
+// =====================
+// סינון קטלוג מוצרים אינטראקטיבי לפי פילטרים ו-URL
+// =====================
+
+// פונקציה שמנרמלת ערכים להשוואה פשוטה (אותיות קטנות, בלי רווחים מיותרים)
+function normalizeString(str){
+    return (str ?? '').toString().trim().toLowerCase();
+}
+// פונקציה שמנרמלת ערכים להשוואה בלי תווים מיוחדים
+function normalizeForCompare(str){
+    return normalizeString(str).replace(/[^a-z0-9]/g, '');
+}
+// פונקציה שמתקנת טעויות כתיב נפוצות מה-JSON (למשל termolo -> tremolo)
+function fixCommonTypos(str){
+    let fixed = normalizeString(str);
+    fixed = fixed.replace(/termolo/g, 'tremolo');
+    return fixed;
+}
+
+// מסנן מוצרים לפי כל הפילטרים שנבחרו
+function filterProducts(products, filters) {
+    return products.filter(product => {
+        // מנרמל ערכים מה-JSON
+        let categoryProduct = normalizeString(product.category);
+        let brandProduct = normalizeString(product.manufacturer || product.brand);
+        let typeProduct = normalizeForCompare(product.type);
+        let submodelProduct = normalizeString(product.submodel);
+        let brandPlusSubmodel = `${brandProduct} ${submodelProduct}`.trim();
+        let stringsProduct = normalizeString(product['number of strings']);
+        let scaleProduct = normalizeForCompare(product['scale length']);
+        let pickupsProduct = normalizeForCompare(product['Pickups']);
+        let featuresProduct = fixCommonTypos(product['additional features']);
+
+        // מסנן לפי קטגוריה
+        if (filters.category && normalizeString(filters.category) !== categoryProduct) return false;
+
+        // מסנן לפי מותג
+        if (filters.brands?.length) {
+            let foundBrand = filters.brands.some(brand => normalizeString(brand) === brandProduct);
+            if (!foundBrand) return false;
+        }
+
+        // מסנן לפי סוג
+        if (filters.types?.length) {
+            let foundType = filters.types.some(type => normalizeForCompare(type) === typeProduct);
+            if (!foundType) return false;
+        }
+
+        // מסנן לפי תת-דגם
+        if (filters.submodels?.length) {
+            let foundSubmodel = filters.submodels.some(submodel => {
+                let submodelNorm = normalizeString(submodel);
+                return submodelNorm === submodelProduct || submodelNorm === brandPlusSubmodel;
+            });
+            if (!foundSubmodel) return false;
+        }
+
+        // מסנן לפי מספר מיתרים
+        if (filters.number_of_strings?.length) {
+            let foundStrings = filters.number_of_strings.some(num => normalizeString(num) === stringsProduct);
+            if (!foundStrings) return false;
+        }
+
+        // מסנן לפי סקייל
+        if (filters.scale_length?.length) {
+            let foundScale = filters.scale_length.some(scale => normalizeForCompare(scale) === scaleProduct);
+            if (!foundScale) return false;
+        }
+
+        // מסנן לפי פיקאפים
+        if (filters.pickups?.length) {
+            let foundPickup = filters.pickups.some(pickup => normalizeForCompare(pickup) === pickupsProduct);
+            if (!foundPickup) return false;
+        }
+
+        // מסנן לפי פיצ'רים נוספים
+        if (filters.additional_features?.length) {
+            let foundFeature = filters.additional_features.some(feature => {
+                let featureNorm = fixCommonTypos(feature);
+                return featureNorm === featuresProduct;
+            });
+            if (!foundFeature) return false;
+        }
+
+        // מסנן לפי מחיר מינימום ומקסימום
+        if (filters.minPrice != null || filters.maxPrice != null) {
+            let priceField = product.finalPrice || product.originalPrice || '0';
+            let price = parsePrice(priceField);
+            if (filters.minPrice != null && price < filters.minPrice) return false;
+            if (filters.maxPrice != null && price > filters.maxPrice) return false;
+        }
+
+        return true;
+    });
+}
+
+// קורא את הפילטרים מה-URL
+function getFiltersFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const getListFromUrl = (key) => urlParams.get(key) ? urlParams.get(key).split(',') : [];
+    const getNumberFromUrl = (key) => urlParams.get(key) ? parseFloat(urlParams.get(key)) : null;
+
+    return {
+        category: urlParams.get('category') || null,
+        brands: getListFromUrl('brand'),
+        statuses: getListFromUrl('status'), // לא קיים אצלי
+        types: getListFromUrl('type'),
+        submodels: getListFromUrl('submodel'),
+        number_of_strings: getListFromUrl('number_of_strings'),
+        scale_length: getListFromUrl('scale_length'),
+        pickups: getListFromUrl('pickups'),
+        additional_features: getListFromUrl('additional_features'),
+        minPrice: getNumberFromUrl('minPrice'),
+        maxPrice: getNumberFromUrl('maxPrice')
+    };
+}
+
+// מעדכן את ה-URL עם הפילטרים (משאיר category אם יש)
+function updateURLWithFilters(filters) {
+    const params = new URLSearchParams(window.location.search);
+
+    const setOrDelete = (key, val) => {
+        if (val == null || val === '' || (Array.isArray(val) && val.length === 0)) params.delete(key);
+        else params.set(key, Array.isArray(val) ? val.join(',') : val);
+    };
+
+    if (filters.category) params.set('category', filters.category);
+
+    setOrDelete('brand', filters.brands || []);
+    setOrDelete('status', filters.statuses || []);
+    setOrDelete('type', filters.types || []);
+    setOrDelete('submodel', filters.submodels || []);
+    setOrDelete('number_of_strings', filters.number_of_strings || []);
+    setOrDelete('scale_length', filters.scale_length || []);
+    setOrDelete('pickups', filters.pickups || []);
+    setOrDelete('additional_features', filters.additional_features || []);
+    setOrDelete('minPrice', filters.minPrice != null ? String(filters.minPrice) : null);
+    setOrDelete('maxPrice', filters.maxPrice != null ? String(filters.maxPrice) : null);
+
+    const newURL = params.toString() ? `?${params.toString()}` : window.location.pathname;
+    window.history.pushState({}, '', newURL);
+}
+
+// אוסף את הפילטרים שנבחרו מהטופס (עובד גם לסייד וגם לרגיל)
+function collectFilters() {
+    // לוקח את כל הערכים המסומנים בכל הפילטרים
+    const getCheckedValues = (selector) => Array.from(document.querySelectorAll(selector)).map(cb => cb.value);
+
+    const brands = getCheckedValues('input[name="brand"]:checked');
+    const statuses = getCheckedValues('input[name="status"]:checked'); // לא בשימוש
+    const types = getCheckedValues('input[name="type"]:checked');
+    const submodels = getCheckedValues('input[name="submodel"]:checked');
+    const number_of_strings = getCheckedValues('input[name="number_of_strings"]:checked');
+    const scale_length = getCheckedValues('input[name="scale_length"]:checked');
+    const pickups = getCheckedValues('input[name="pickups"]:checked');
+    const additional_features = getCheckedValues('input[name="additional_features"]:checked');
+
+    // לוקח ערכי מחיר מכל תיבה קיימת (גם רגיל וגם צד)
+    const priceBoxes = Array.from(document.querySelectorAll('.filter_price_box'));
+    let minPrice = null, maxPrice = null;
+    for (const box of priceBoxes){
+        const inputs = box.querySelectorAll('input[type="number"]');
+        const min = inputs[0]?.value?.trim();
+        const max = inputs[1]?.value?.trim();
+        if (min && minPrice == null) minPrice = parseFloat(min);
+        if (max && maxPrice == null) maxPrice = parseFloat(max);
+    }
+
+    const urlCategory = new URLSearchParams(window.location.search).get('category');
+
+    return {
+        category: urlCategory,
+        brands,
+        statuses,
+        types,
+        submodels,
+        number_of_strings,
+        scale_length,
+        pickups,
+        additional_features,
+        minPrice: Number.isFinite(minPrice) ? minPrice : null,
+        maxPrice: Number.isFinite(maxPrice) ? maxPrice : null
+    };
+}
+
+// מעדכן את הצ'קבוקסים לפי הערכים מה-URL (כולל כפילויות בראשי ובצד)
+function updateFiltersFromURL(filters) {
+    // עובר על כל פילטר ומעדכן את הצ'קבוקסים
+    const checkAll = (name, values) => {
+        values.forEach(val => {
+            const inputs = document.querySelectorAll(`input[name="${name}"][value="${CSS.escape(val)}"]`);
+            inputs.forEach(inp => inp.checked = true);
+        });
+    };
+
+    checkAll('brand', filters.brands || []);
+    checkAll('status', filters.statuses || []);
+    checkAll('type', filters.types || []);
+    checkAll('submodel', filters.submodels || []);
+    checkAll('number_of_strings', filters.number_of_strings || []);
+    checkAll('scale_length', filters.scale_length || []);
+    checkAll('pickups', filters.pickups || []);
+    checkAll('additional_features', filters.additional_features || []);
+
+    // מעדכן את ערכי המחיר בכל התיבות
+    document.querySelectorAll('.filter_price_box').forEach(box => {
+        const inputs = box.querySelectorAll('input[type="number"]');
+        if (inputs[0]) inputs[0].value = filters.minPrice != null ? filters.minPrice : '';
+        if (inputs[1]) inputs[1].value = filters.maxPrice != null ? filters.maxPrice : '';
+    });
+}
+
+// מפעיל את הסינון בכל שינוי ומרנדר את המוצרים אל #catalog
+function applyFilters(allProducts) {
+    const filters = collectFilters();
+    updateURLWithFilters(filters);
+
+    // מסנן לפי קטגוריה אם נבחרה
+    const baseProducts = filters.category ? allProducts.filter(product => normalizeString(product.category) === normalizeString(filters.category)) : allProducts;
+    const filteredProducts = filterProducts(baseProducts, filters);
+
+    const container = document.querySelector('#catalog');
+    if (!container) {
+        console.error('Container #catalog not found!');
+        return;
+    }
+    container.innerHTML = '';
+
+    filteredProducts.forEach(product => {
+        creator(product);
+    });
+}
+
+// אתחול מאזינים וסנכרון ראשוני – עובד גם לרגיל וגם לרספונסיבי
+function initCatalogFiltering(allProducts){
+    // קורא את הפילטרים מה-URL ומעדכן את הצ'קבוקסים
+    const urlFilters = getFiltersFromURL();
+    updateFiltersFromURL(urlFilters);
+
+    // מאזין לכל הצ'קבוקסים של הפילטרים
+    const checkboxSelectors = [
+        'input[name="brand"]',
+        'input[name="type"]',
+        'input[name="submodel"]',
+        'input[name="number_of_strings"]',
+        'input[name="scale_length"]',
+        'input[name="pickups"]',
+        'input[name="additional_features"]'
+    ].join(',');
+    document.querySelectorAll(checkboxSelectors).forEach(el => {
+        el.addEventListener('change', () => applyFilters(allProducts));
+    });
+
+    // מאזין לכל שדות המחיר (גם רגיל וגם צד)
+    document.querySelectorAll('.filter_price_box input[type="number"]').forEach(inp => {
+        inp.addEventListener('input', () => applyFilters(allProducts));
+        inp.addEventListener('change', () => applyFilters(allProducts));
+    });
+
+    // מאזין לטווח מחיר (אם תרצה להשתמש בו)
+    document.querySelectorAll('.price_range').forEach(r => {
+        r.addEventListener('input', () => applyFilters(allProducts));
+    });
+
+    // מאזין ל-back/forward בדפדפן
+    window.addEventListener('popstate', () => {
+        const f = getFiltersFromURL();
+        updateFiltersFromURL(f);
+        applyFilters(allProducts);
+    });
+
+    // רינדור ראשון של המוצרים
+    applyFilters(allProducts);
+}
+
